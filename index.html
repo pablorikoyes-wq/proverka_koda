@@ -1,0 +1,758 @@
+<html lang="uz" style="--tg-theme-accent-text-color: #6ab2f2; --tg-color-scheme: dark; --tg-theme-bg-color: #17212b; --tg-theme-bottom-bar-bg-color: #17212b; --tg-theme-button-color: #5288c1; --tg-theme-button-text-color: #ffffff; --tg-theme-destructive-text-color: #ec3942; --tg-theme-header-bg-color: #17212b; --tg-theme-hint-color: #708499; --tg-theme-link-color: #6ab3f3; --tg-theme-secondary-bg-color: #232e3c; --tg-theme-section-bg-color: #17212b; --tg-theme-section-header-text-color: #6ab3f3; --tg-theme-section-separator-color: #111921; --tg-theme-subtitle-text-color: #708499; --tg-theme-text-color: #f5f5f5; --tg-viewport-height: 502px; --tg-viewport-stable-height: 502px; --tg-safe-area-inset-top: 0px; --tg-safe-area-inset-bottom: 0px; --tg-safe-area-inset-left: 0px; --tg-safe-area-inset-right: 0px; --tg-content-safe-area-inset-top: 0px; --tg-content-safe-area-inset-bottom: 0px; --tg-content-safe-area-inset-left: 0px; --tg-content-safe-area-inset-right: 0px;"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FontsPay Mini Ilova</title>
+    
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style> ::-webkit-scrollbar { border-radius: 5px !important; border: 3px solid transparent !important; background-color: rgba(255, 255, 255, 0.101961) !important; background-clip: content-box !important; width: 10px !important; } ::-webkit-scrollbar:hover { background-color: rgba(255, 255, 255, 0.172549) !important; } ::-webkit-scrollbar-thumb { border-radius: 5px !important; border: 3px solid transparent !important; background-color: rgba(255, 255, 255, 0.32549) !important; background-clip: content-box !important; } ::-webkit-scrollbar-thumb:hover { background-color: rgba(255, 255, 255, 0.478431) !important; } </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,700;1,400&amp;family=Caveat:wght@700&amp;family=Courier+Prime:wght@700&amp;display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: pan-y;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .nav-active { color: #5c61f4; }
+        .nav-inactive { color: #9ca3af; }
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-caveat { font-family: 'Caveat', cursive; }
+        .font-courier { font-family: 'Courier Prime', monospace; }
+        
+        input[type="radio"]:checked + div {
+            border-color: #5c61f4;
+            background-color: #f5f3ff;
+        }
+        input[type="radio"]:checked + div .radio-dot {
+            background-color: #5c61f4;
+        }
+    </style>
+
+    <script>
+        // ========== KONFIGURATSIYA ==========
+        window.BOT_ID = 8914981594;
+        // FAQAT 3 TA SPONSOR KANAL
+        window.SPONSOR_CHANNELS = [
+            {"url": "https://t.me/+y21STJee1WphZjNi", "name": "ISH HAMMAGA"},
+            {"url": "https://telegram.me/+9hB_bnX7QGI5ZTIy", "name": "💎Strategiya Markazi💎"},
+            {"url": "https://t.me/+OetsLzD4YZ00NDdi", "name": "PhotoStock To'lovlari"}
+        ];
+    </script>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-0{bottom:0px}.left-0{left:0px}.right-0{right:0px}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.-ml-2{margin-left:-0.5rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-24{margin-bottom:6rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-1{margin-left:0.25rem}.mr-2{margin-right:0.5rem}.mt-24{margin-top:6rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.block{display:block}.flex{display:flex}.hidden{display:none}.aspect-square{aspect-ratio:1 / 1}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-2\.5{height:0.625rem}.h-20{height:5rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-\[56px\]{height:56px}.h-full{height:100%}.h-screen{height:100vh}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-2\.5{width:0.625rem}.w-20{width:5rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-full{width:100%}.w-32{width:8rem}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.scale-95{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.touch-none{touch-action:none}.select-none{-webkit-user-select:none;user-select:none}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[18px\]{border-radius:18px}.rounded-\[24px\]{border-radius:24px}.rounded-\[32px\]{border-radius:32px}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-50{--tw-border-opacity:1;border-color:rgb(249 250 251 / var(--tw-border-opacity, 1))}.bg-\[\#00A3E0\]{--tw-bg-opacity:1;background-color:rgb(0 163 224 / var(--tw-bg-opacity, 1))}.bg-\[\#143D5C\]{--tw-bg-opacity:1;background-color:rgb(20 61 92 / var(--tw-bg-opacity, 1))}.bg-\[\#1A5276\]{--tw-bg-opacity:1;background-color:rgb(26 82 118 / var(--tw-bg-opacity, 1))}.bg-\[\#5c61f4\]{--tw-bg-opacity:1;background-color:rgb(92 97 244 / var(--tw-bg-opacity, 1))}.bg-\[\#e0e7ff\]{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-200\/60{background-color:rgb(229 231 235 / 0.6)}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-indigo-50\/50{background-color:rgb(238 242 255 / 0.5)}.p-1{padding:0.25rem}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-20{padding-bottom:5rem}.pb-6{padding-bottom:1.5rem}.pt-2{padding-top:0.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.font-serif{font-family:ui-serif, Georgia, Cambria, "Times New Roman", Times, serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[14px\]{font-size:14px}.text-\[15px\]{font-size:15px}.text-\[16px\]{font-size:16px}.text-\[17px\]{font-size:17px}.text-\[18px\]{font-size:18px}.text-\[22px\]{font-size:22px}.text-\[250px\]{font-size:250px}.text-\[28px\]{font-size:28px}.text-\[42px\]{font-size:42px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.font-black{font-weight:900}.font-light{font-weight:300}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-wider{letter-spacing:0.05em}.tracking-tighter{letter-spacing:-0.05em}.text-\[\#5c61f4\]{--tw-text-opacity:1;color:rgb(92 97 244 / var(--tw-text-opacity, 1))}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-indigo-100{--tw-text-opacity:1;color:rgb(224 231 255 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-indigo-200{--tw-shadow-color:#c7d2fe;--tw-shadow:var(--tw-shadow-colored)}.outline-none{outline:2px solid transparent;outline-offset:2px}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.focus\:border-\[\#5c61f4\]:focus{--tw-border-opacity:1;border-color:rgb(92 97 244 / var(--tw-border-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:bg-blue-700:active{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.active\:bg-gray-200:active{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.active\:bg-gray-50:active{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.active\:bg-indigo-100:active{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.active\:opacity-50:active{opacity:0.5}.disabled\:opacity-70:disabled{opacity:0.7}</style><style> ::-webkit-scrollbar { border-radius: 5px !important; border: 3px solid transparent !important; background-color: rgba(255, 255, 255, 0.101961) !important; background-clip: content-box !important; width: 10px !important; } ::-webkit-scrollbar:hover { background-color: rgba(255, 255, 255, 0.172549) !important; } ::-webkit-scrollbar-thumb { border-radius: 5px !important; border: 3px solid transparent !important; background-color: rgba(255, 255, 255, 0.32549) !important; background-clip: content-box !important; } ::-webkit-scrollbar-thumb:hover { background-color: rgba(255, 255, 255, 0.478431) !important; } </style></head>
+<body class="text-gray-900 select-none bg-gray-50">
+
+    <div id="app" class="pb-20 h-screen overflow-y-auto hide-scrollbar relative max-w-md mx-auto">
+
+        <!-- ====== TOPSHIRIQLAR EKRANI ====== -->
+        <div id="screen-tasks" class="p-4 screen-section block">
+            <div class="flex items-center gap-3 mb-6">
+                <img src="https://ui-avatars.com/api/?name=⁠⁠⁠⁠&amp;background=e0e7ff&amp;color=4f46e5" alt="Avatar" class="w-12 h-12 rounded-full" id="user-avatar">
+                <div>
+                    <h2 class="font-bold text-lg leading-tight" id="user-name">⁠⁠⁠⁠</h2>
+                    <p class="text-gray-500 text-sm">Ijrochi</p>
+                </div>
+            </div>
+
+            <div class="bg-[#5c61f4] rounded-3xl p-6 text-white shadow-lg shadow-indigo-200 mb-6 relative overflow-hidden">
+                <p class="text-indigo-100 text-sm mb-1">Sizning balansingiz</p>
+                <div class="text-4xl font-bold mb-6"><span id="main-balance">0</span> <span class="text-2xl font-normal">so'm</span></div>
+                <button onclick="goToWithdraw()" class="w-full bg-white text-[#5c61f4] font-semibold py-3 rounded-2xl flex items-center justify-center gap-2 active:scale-95 transition-transform">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path></svg>
+                    Pul yechib olish
+                </button>
+            </div>
+
+            <div class="bg-gray-200/60 p-1 rounded-2xl flex gap-1 mb-6">
+                <button class="flex-1 bg-white shadow-sm py-2 rounded-xl font-medium text-sm">Bosh sahifa</button>
+                <button class="flex-1 text-gray-500 py-2 rounded-xl font-medium text-sm">Barcha topshiriqlar</button>
+            </div>
+
+            <h3 class="font-bold text-xl mb-4">Mavjud shriftlar</h3>
+            <div id="tasks-list" class="space-y-4"></div>
+        </div>
+
+        <!-- ====== STATISTIKA EKRANI ====== -->
+        <div id="screen-stats" class="p-4 screen-section hidden">
+            <h2 class="text-[28px] font-bold text-center mt-6 mb-8">Statistika</h2>
+            
+            <div class="bg-white rounded-[24px] p-6 shadow-sm mb-4">
+                <p class="text-gray-500 text-sm mb-1">Jami ishlangan</p>
+                <div class="text-4xl font-bold"><span id="stats-balance">0</span> <span class="font-normal text-2xl">so'm</span></div>
+            </div>
+
+            <div class="flex gap-4 mb-4">
+                <div class="flex-1 bg-white rounded-[24px] p-6 shadow-sm">
+                    <div class="text-[28px] font-bold mb-1" id="stats-letters">0</div>
+                    <p class="text-gray-500 text-xs">Raqamlashtirilgan harflar</p>
+                </div>
+                <div class="flex-1 bg-white rounded-[24px] p-6 shadow-sm">
+                    <div class="text-[28px] font-bold mb-1" id="stats-tasks">0</div>
+                    <p class="text-gray-500 text-xs">Bajarilgan topshiriqlar</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[24px] p-6 shadow-sm flex items-center gap-4">
+                <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center">
+                    <div class="w-10 h-10 bg-[#e0e7ff] rounded-full"></div>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-xs mb-1">Sizning darajangiz</p>
+                    <h4 class="font-bold text-[17px] text-gray-900">Boshlang'ich</h4>
+                    <p class="text-gray-400 text-xs">1-daraja</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== PROFIL EKRANI ====== -->
+        <div id="screen-profile" class="p-4 screen-section hidden">
+            <h2 class="text-[28px] font-bold text-center mt-6 mb-8">Profil</h2>
+
+            <div class="bg-white rounded-[24px] p-5 shadow-sm border border-gray-50 mb-4 flex items-center gap-4">
+                <img src="https://ui-avatars.com/api/?name=⁠⁠⁠⁠&amp;background=e0e7ff&amp;color=4f46e5" class="w-16 h-16 rounded-full" id="profile-avatar">
+                <div>
+                    <h3 class="font-bold text-xl" id="profile-name">⁠⁠⁠⁠</h3>
+                    <p class="text-[#5c61f4] text-sm font-medium">Ijrochi</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-50 overflow-hidden">
+                <div onclick="goToWithdraw()" class="p-5 border-b border-gray-50 flex justify-between items-center active:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3 font-medium text-gray-900">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5c61f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path></svg>
+                        Pul yechib olish
+                    </div>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+                </div>
+                
+                <div onclick="showScreen('screen-history')" class="p-5 flex justify-between items-center active:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3 font-medium text-gray-900">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Yechib olish tarixi
+                    </div>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== TARIX EKRANI ====== -->
+        <div id="screen-history" class="p-4 screen-section hidden min-h-screen">
+            <div class="flex items-center mb-6 pt-2">
+                <button onclick="showScreen('screen-profile')" class="p-2 -ml-2 mr-2 active:opacity-50">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5c61f4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <h2 class="text-2xl font-bold">Yechib olish tarixi</h2>
+            </div>
+
+            <div class="flex flex-col items-center justify-center mt-24 text-center">
+                <div class="w-20 h-20 bg-gray-100 text-gray-300 rounded-full flex items-center justify-center mb-4">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3 class="font-bold text-[18px] text-gray-900 mb-1">Tarix bo'sh</h3>
+                <p class="text-gray-500 text-[14px]">Siz hali pul yechib olishni buyurtma qilmagansiz</p>
+            </div>
+        </div>
+
+        <!-- ====== CHIZISH EKRANI ====== -->
+        <div id="screen-drawing" class="p-4 screen-section hidden min-h-screen">
+            
+            <div class="bg-white border border-gray-100 shadow-sm rounded-3xl p-5 mb-6 mt-4 flex justify-between items-center">
+                <div>
+                    <p class="text-gray-400 text-[11px] font-bold uppercase mb-1 tracking-wider">Ishlangan</p>
+                    <div class="text-[22px] font-bold"><span id="draw-earned">0</span> <span class="text-base font-normal text-gray-400" id="draw-total">/ 0 so'm</span></div>
+                </div>
+                <div class="bg-gray-100 text-gray-600 px-4 py-2 rounded-xl text-sm font-medium" id="draw-progress">
+                    Harf 1 / 33
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-100 shadow-sm rounded-[32px] w-full aspect-square relative mb-6 overflow-hidden touch-none" id="canvas-container">
+                <div id="template-letter" class="absolute inset-0 flex items-center justify-center text-[250px] text-gray-200 pointer-events-none select-none transition-all duration-300">A</div>
+                <canvas id="drawingCanvas" class="absolute inset-0 w-full h-full touch-none"></canvas>
+            </div>
+
+            <div class="flex gap-4 items-center">
+                <button onclick="clearCanvas()" class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 active:bg-gray-200 transition-colors shrink-0">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                        <path d="M3 3v5h5"></path>
+                    </svg>
+                </button>
+                <button onclick="nextLetter()" class="flex-1 bg-[#5c61f4] text-white rounded-[32px] h-16 font-bold text-[17px] active:bg-blue-700 transition-colors">
+                    Tayyor
+                </button>
+            </div>
+        </div>
+
+        <!-- ====== PUL YECHIB OLISH EKRANI ====== -->
+        <div id="screen-withdraw" class="p-4 screen-section hidden min-h-screen">
+            <div class="flex items-center mb-6 pt-2">
+                <button onclick="showScreen('screen-profile')" class="p-2 -ml-2 mr-2 active:opacity-50">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5c61f4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <h2 class="text-2xl font-bold">Pul yechib olish</h2>
+            </div>
+
+            <div class="bg-white rounded-[32px] p-6 shadow-sm border border-gray-100 text-center mb-6">
+                <p class="text-gray-500 mb-2 font-medium">Yechib olish uchun mavjud</p>
+                <div class="text-[42px] font-bold mb-8 leading-none"><span id="withdraw-balance">0</span> <span class="font-normal text-3xl">so'm</span></div>
+
+                <div class="flex gap-1 bg-gray-50 p-1.5 rounded-[18px] mb-6">
+                    <button id="btn-sbp" onclick="setWithdrawMethod('sbp')" class="flex-1 bg-[#5c61f4] text-white py-3.5 rounded-xl font-medium text-sm transition-colors shadow-sm">
+                        Telefon raqam
+                    </button>
+                    <button id="btn-card" onclick="setWithdrawMethod('card')" class="flex-1 bg-transparent text-gray-500 py-3.5 rounded-xl font-medium text-sm transition-colors">
+                        Karta raqamiga
+                    </button>
+                </div>
+
+                <input id="withdraw-account" type="tel" maxlength="12" oninput="formatInput(this)" placeholder="Telefon raqami (12 ta raqam)" class="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 px-5 text-center font-medium text-base outline-none focus:border-[#5c61f4] mb-4 transition-colors">
+                
+                <div id="bank-selector" class="text-left mb-6">
+                    <h3 class="font-bold text-[15px] mb-3 text-gray-900 ml-1">Bankni tanlang</h3>
+                    <div class="space-y-2">
+                        <label class="relative block cursor-pointer">
+                            <input type="radio" name="bank" checked="" class="peer sr-only">
+                            <div class="flex items-center gap-3 p-3.5 bg-white border-2 border-gray-100 rounded-2xl transition-all">
+                                <div class="w-8 h-8 bg-[#00A3E0] rounded-full flex items-center justify-center shrink-0">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                        <path d="M2 17l10 5 10-5"></path>
+                                        <path d="M2 12l10 5 10-5"></path>
+                                    </svg>
+                                </div>
+                                <span class="font-bold text-[15px] text-gray-900 flex-1">HUMO</span>
+                                <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center radio-dot-container">
+                                    <div class="w-2.5 h-2.5 rounded-full radio-dot bg-transparent transition-colors"></div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="relative block cursor-pointer">
+                            <input type="radio" name="bank" class="peer sr-only">
+                            <div class="flex items-center gap-3 p-3.5 bg-white border-2 border-gray-100 rounded-2xl transition-all">
+                                <div class="w-8 h-8 bg-[#1A5276] rounded-full flex items-center justify-center shrink-0">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                        <line x1="6" y1="8" x2="18" y2="8"></line>
+                                        <line x1="6" y1="12" x2="14" y2="12"></line>
+                                        <line x1="6" y1="16" x2="10" y2="16"></line>
+                                        <line x1="16" y1="12" x2="18" y2="16"></line>
+                                    </svg>
+                                </div>
+                                <span class="font-bold text-[15px] text-gray-900 flex-1">UZCARD</span>
+                                <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center radio-dot-container">
+                                    <div class="w-2.5 h-2.5 rounded-full radio-dot bg-transparent transition-colors"></div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="relative block cursor-pointer">
+                            <input type="radio" name="bank" class="peer sr-only">
+                            <div class="flex items-center gap-3 p-3.5 bg-white border-2 border-gray-100 rounded-2xl transition-all">
+                                <div class="w-8 h-8 bg-[#143D5C] rounded-full flex items-center justify-center shrink-0">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 8h18M3 16h18M8 8v8M16 8v8"></path>
+                                        <path d="M20 8c-4 2-4 6 0 8"></path>
+                                        <path d="M4 8c4 2 4 6 0 8"></path>
+                                    </svg>
+                                </div>
+                                <span class="font-bold text-[15px] text-gray-900 flex-1">VISA</span>
+                                <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center radio-dot-container">
+                                    <div class="w-2.5 h-2.5 rounded-full radio-dot bg-transparent transition-colors"></div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <button onclick="attemptWithdraw()" class="w-full bg-[#5c61f4] text-white py-4.5 rounded-2xl h-[56px] font-bold text-[16px] active:bg-blue-700 transition-colors">
+                    Yechib olishni buyurtma qilish
+                </button>
+                <p class="text-gray-400 text-xs mt-4">Minimal 75 000 so'm</p>
+            </div>
+        </div>
+
+        <!-- ====== SPONSORLARNI TEKSHIRISH EKRANI ====== -->
+        <div id="screen-sponsor" class="p-4 screen-section hidden min-h-screen bg-gray-50">
+            <div class="flex items-center mb-6 pt-2">
+                <button onclick="showScreen('screen-withdraw')" class="p-2 -ml-2 mr-2 active:opacity-50">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5c61f4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <h2 class="text-2xl font-bold">Tekshirish</h2>
+            </div>
+            
+            <p class="text-center text-gray-500 text-sm mb-6 px-2">Pul yechib olishni yakunlash uchun loyiha homiylariga obuna bo'lishingiz kerak.</p>
+            
+            <div id="channels-list" class="space-y-3 mb-24 overflow-y-auto"></div>
+
+            <div class="fixed bottom-0 left-0 right-0 p-4 bg-gray-50 border-t border-gray-100 max-w-md mx-auto">
+                <button id="verify-btn" onclick="checkSubscriptionReal()" class="w-full bg-[#5c61f4] text-white py-4.5 rounded-2xl h-[56px] font-bold text-[16px] active:bg-blue-700 transition-colors disabled:opacity-70">
+                    Obunani tekshirish
+                </button>
+            </div>
+        </div>
+
+        <!-- ====== NAVIGATSIYA ====== -->
+        <div id="bottom-nav" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-6 py-2 pb-6 flex justify-between items-center text-[10px] font-medium z-40 max-w-md mx-auto">
+            <div onclick="showScreen('screen-tasks')" class="nav-item nav-active flex flex-col items-center gap-1.5 w-16 pt-2" data-target="screen-tasks">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                Topshiriqlar
+            </div>
+            <div onclick="showScreen('screen-stats')" class="nav-item nav-inactive flex flex-col items-center gap-1.5 w-16 pt-2" data-target="screen-stats">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="8" y2="16"></line><line x1="16" y1="14" x2="16" y2="16"></line></svg>
+                Statistika
+            </div>
+            <div onclick="showScreen('screen-profile')" class="nav-item nav-inactive flex flex-col items-center gap-1.5 w-16 pt-2" data-target="screen-profile">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Profil
+            </div>
+        </div>
+
+        <!-- ====== MAXSUS ALERT ====== -->
+        <div id="custom-alert" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 hidden opacity-0 transition-opacity duration-300 px-4">
+            <div class="bg-white rounded-[24px] p-6 w-full max-w-sm text-center shadow-2xl transform scale-95 transition-transform duration-300" id="custom-alert-box">
+                <div class="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12.01" y2="16"></line><path d="M12 8v4"></path></svg>
+                </div>
+                <h3 class="font-bold text-xl mb-2 text-gray-900">Diqqat</h3>
+                <p class="text-gray-500 text-[15px] mb-6 leading-relaxed" id="custom-alert-msg">Xabar matni</p>
+                <button onclick="closeCustomAlert()" class="w-full bg-gray-100 text-gray-900 font-bold py-4 rounded-2xl active:bg-gray-200 transition-colors">OK</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ========== TELEGRAM INIT ==========
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+        tg.expand();
+        tg.disableVerticalSwipes();
+
+        if (tg.initDataUnsafe?.user) {
+            const userName = tg.initDataUnsafe.user.first_name || 'Foydalanuvchi';
+            document.getElementById('user-name').innerText = userName;
+            document.getElementById('profile-name').innerText = userName;
+            
+            const avatarUrl = `https://ui-avatars.com/api/?name=${userName}&background=e0e7ff&color=4f46e5`;
+            document.getElementById('user-avatar').src = avatarUrl;
+            document.getElementById('profile-avatar').src = avatarUrl;
+        }
+
+        // ========== LOCALSTORAGE ==========
+        const STORAGE_KEYS = {
+            balance: 'fontspay_balance',
+            letters: 'fontspay_letters',
+            tasks: 'fontspay_tasks'
+        };
+
+        let globalBalance = 0;
+        let globalLettersCount = 0;
+        let globalTasksCount = 0;
+
+        function loadStats() {
+            try {
+                globalBalance = parseInt(localStorage.getItem(STORAGE_KEYS.balance)) || 0;
+                globalLettersCount = parseInt(localStorage.getItem(STORAGE_KEYS.letters)) || 0;
+                globalTasksCount = parseInt(localStorage.getItem(STORAGE_KEYS.tasks)) || 0;
+            } catch (e) {
+                globalBalance = 0;
+                globalLettersCount = 0;
+                globalTasksCount = 0;
+            }
+        }
+
+        function saveStats() {
+            try {
+                localStorage.setItem(STORAGE_KEYS.balance, String(globalBalance));
+                localStorage.setItem(STORAGE_KEYS.letters, String(globalLettersCount));
+                localStorage.setItem(STORAGE_KEYS.tasks, String(globalTasksCount));
+            } catch (e) {}
+        }
+
+        loadStats();
+
+        function updateGlobalStats() {
+            document.getElementById('main-balance').innerText = globalBalance.toLocaleString('uz-UZ');
+            document.getElementById('stats-balance').innerText = globalBalance.toLocaleString('uz-UZ');
+            document.getElementById('withdraw-balance').innerText = globalBalance.toLocaleString('uz-UZ');
+            document.getElementById('stats-letters').innerText = globalLettersCount;
+            document.getElementById('stats-tasks').innerText = globalTasksCount;
+            saveStats();
+        }
+        updateGlobalStats();
+
+        // ========== ALIFBOLAR (BARCHA TILLAR) ==========
+        // O'zbek alifbosi (standart - birinchi)
+        const uzAlphabet = ['A','B','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z','O\'','G\'','SH','CH','NG'];
+        const ruAlphabet = ['А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я'];
+        const enAlphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        const zhAlphabet = ['的','一','是','不','了','人','我','在','有','他','这','为','之','大','来','以','个','中','上','们','到','说','国','和','地','也','子','时','道','出'];
+        const arAlphabet = ['ا','ب','ت','ث','ج','ح','خ','د','ذ','ر','ز','س','ش','ص','ض','ط','ظ','ع','غ','ف','ق','ك','ل','م','ن','ه','و','ي'];
+        const kkAlphabet = ['А','Ә','Б','В','Г','Ғ','Д','Е','Ё','Ж','З','И','Й','К','Қ','Л','М','Н','Ң','О','Ө','П','Р','С','Т','У','Ұ','Ү','Ф','Х','Һ','Ц','Ч','Ш','Щ','Ъ','Ы','І','Ь','Э','Ю','Я'];
+        const plAlphabet = ['A','Ą','B','C','Ć','D','E','Ę','F','G','H','I','J','K','L','Ł','M','N','Ń','O','Ó','P','R','S','Ś','T','U','W','Y','Z','Ź','Ż'];
+
+        // ========== TOPSHIRIQLAR (O'ZBEK TILIDA) ==========
+        const tasksData = [
+            { id: 1, title: "O'zbekcha (Bosma)", type: 'Bosma shrift', price: 130000, per: 4500, css: 'font-sans font-bold', size: '220px', lang: 'uz', previewLetter: 'O' },
+            { id: 2, title: "O'zbekcha (Yozma)", type: "Qo'lyozma", price: 174000, per: 6000, css: 'font-caveat', size: '250px', lang: 'uz', previewLetter: 'B' },
+            { id: 3, title: 'Ruscha (Bosma)', type: 'Bosma', price: 125000, per: 3800, css: 'font-sans font-bold', size: '220px', lang: 'ru', previewLetter: 'А' },
+            { id: 4, title: 'Inglizcha (Klassik)', type: 'Shtrixli', price: 120000, per: 4600, css: 'font-playfair', size: '240px', lang: 'en', previewLetter: 'G' },
+            { id: 5, title: "Ruscha (Qo'lyozma)", type: "Qo'lyozma", price: 175000, per: 5300, css: 'font-caveat', size: '250px', lang: 'ru', previewLetter: 'Б' },
+            { id: 6, title: 'Inglizcha (Kursiv)', type: 'Kalligrafiya', price: 140000, per: 5400, css: 'font-playfair italic', size: '230px', lang: 'en', previewLetter: 'Q' },
+            { id: 7, title: 'Inglizcha (Yozuv mashinkasi)', type: 'Monoshirin', price: 100000, per: 3800, css: 'font-courier', size: '210px', lang: 'en', previewLetter: 'W' },
+            { id: 8, title: 'Ruscha (Yupqa)', type: 'Zamonaviy', price: 150000, per: 4500, css: 'font-sans font-light', size: '210px', lang: 'ru', previewLetter: 'М' },
+            { id: 9, title: 'Inglizcha (Skript)', type: 'Kalligrafiya', price: 160000, per: 6200, css: 'font-caveat font-bold', size: '260px', lang: 'en', previewLetter: 'B' },
+            { id: 10, title: 'Ruscha (Plakat)', type: 'Aksentli', price: 125000, per: 3800, css: 'font-sans font-black tracking-tighter', size: '220px', lang: 'ru', previewLetter: 'Р' },
+            { id: 11, title: 'Inglizcha (Qattiq)', type: 'Shtrixli', price: 120000, per: 4600, css: 'font-serif font-medium', size: '220px', lang: 'en', previewLetter: 'H' },
+            { id: 12, title: 'Ruscha (Yozuv mashinkasi)', type: 'Monoshirin', price: 100000, per: 3000, css: 'font-courier', size: '210px', lang: 'ru', previewLetter: 'Ф' },
+            { id: 13, title: "Xitoycha (Ierogliflar)", type: 'Asosiy', price: 680000, per: 22700, css: 'font-sans font-bold', size: '200px', lang: 'zh', previewLetter: '文' },
+            { id: 14, title: "Arabcha (Bog'lama)", type: 'Kalligrafiya', price: 380000, per: 13600, css: 'font-sans', size: '220px', lang: 'ar', previewLetter: 'ع' },
+            { id: 15, title: 'Polyakcha (Lotincha)', type: 'Diakritikli', price: 310000, per: 9700, css: 'font-playfair', size: '230px', lang: 'pl', previewLetter: 'Ł' },
+            { id: 16, title: 'Qozoqcha (Kirill)', type: 'Kengaytirilgan', price: 285000, per: 6800, css: 'font-sans font-medium', size: '220px', lang: 'kk', previewLetter: 'Қ' }
+        ];
+
+        function renderTasks() {
+            const list = document.getElementById('tasks-list');
+            list.innerHTML = tasksData.map(task => `
+                <div class="bg-white rounded-[24px] p-4 shadow-sm border border-gray-50">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex gap-4">
+                            <div class="w-14 h-14 bg-gray-50 rounded-[18px] flex items-center justify-center text-3xl text-gray-800 ${task.css}">${task.previewLetter}</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-[15px] truncate w-32">${task.title}</h4>
+                                <p class="text-gray-400 text-[10px] font-bold uppercase mt-1 tracking-wider">${task.type}</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-emerald-500 text-[15px]">${task.price.toLocaleString('uz-UZ')}</div>
+                            <div class="text-gray-400 text-xs mt-0.5">${task.per.toLocaleString('uz-UZ')} so'm /dona</div>
+                        </div>
+                    </div>
+                    <button onclick="startDrawing(${task.id})" class="bg-indigo-50/50 text-[#5c61f4] font-semibold px-4 py-3 rounded-xl text-[14px] flex items-center justify-center gap-2 active:bg-indigo-100 w-full transition-colors">
+                        Boshlash
+                    </button>
+                </div>
+            `).join('');
+        }
+        renderTasks();
+
+        function renderSponsors() {
+            const list = document.getElementById('channels-list');
+            list.innerHTML = window.SPONSOR_CHANNELS.map(ch => {
+                const name = ch.name || ch.url.replace('https://t.me/', '@');
+                return `
+                    <a href="${ch.url}" target="_blank" class="block bg-white shadow-sm border border-gray-100 p-4 rounded-[20px] flex justify-between items-center active:bg-gray-50 transition-colors">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-[15px]">${name}</h4>
+                            ${ch.desc ? `<p class="text-gray-500 text-[11px] mt-1 uppercase font-bold tracking-wide">${ch.desc}</p>` : ''}
+                        </div>
+                        <div class="w-10 h-10 bg-indigo-50 rounded-full flex items-center justify-center text-[#5c61f4]">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+        }
+
+        // ========== OBUNA TEKSHIRISH ==========
+        async function checkSubscriptionReal() {
+            const btn = document.getElementById('verify-btn');
+            
+            const user = tg.initDataUnsafe?.user;
+            if (!user || !user.id) {
+                showCustomAlert('Xatolik: Foydalanuvchi ID topilmadi!');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerText = 'Tekshirilmoqda...';
+
+            try {
+                const response = await fetch('https://harf-pay.pablorikoyes.workers.dev/check_subscription', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        user_id: user.id,
+                        init_data: tg.initData || ''
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.subscribed === true) {
+                    tg.HapticFeedback.notificationOccurred('success');
+                    showCustomAlert('✅ Siz barcha kanallarga obuna bo\'lgansiz!');
+                    
+                    try {
+                        await fetch('https://harf-pay.pablorikoyes.workers.dev/api/send_notification', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                user_id: user.id,
+                                text: '✅ <b>Ajoyib!</b>\n\nSiz barcha homiylarga obuna bo\'ldingiz! 🎉\n\n📊 Hozirda bizning serverimizda <b>10 000+</b> foydalanuvchi faol.\n\n⏳ Shu sababli to\'lovlar <b>24 soat</b> ga kechiktirilishi mumkin.\n\n🙏🏻 Ushbu nosozlik uchun uzr so\'raymiz! Bizning dasturchilar allaqachon bu muammo ustida ishlamoqda. ❤️',
+                                parse_mode: 'HTML'
+                            })
+                        });
+                    } catch (notifyError) {
+                        console.log('Xabarnoma yuborishda xatolik:', notifyError);
+                    }
+                    
+                    setTimeout(() => {
+                        tg.close();
+                    }, 1500);
+                } else {
+                    tg.HapticFeedback.notificationOccurred('error');
+                    showCustomAlert('❌ Siz barcha kanallarga obuna bo\'lmagansiz. Iltimos, obuna bo\'ling va qaytadan urinib ko\'ring!');
+                }
+            } catch (error) {
+                console.error('Obuna tekshirish:', error);
+                tg.HapticFeedback.notificationOccurred('error');
+                showCustomAlert('❌ Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring!');
+            } finally {
+                btn.disabled = false;
+                btn.innerText = 'Obunani tekshirish';
+            }
+        }
+
+        // ========== NAVIGATSIYA ==========
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen-section').forEach(el => {
+                el.classList.remove('block');
+                el.classList.add('hidden');
+            });
+            document.getElementById(screenId).classList.remove('hidden');
+            document.getElementById(screenId).classList.add('block');
+
+            const nav = document.getElementById('bottom-nav');
+            if (['screen-drawing', 'screen-withdraw', 'screen-history', 'screen-sponsor'].includes(screenId)) {
+                nav.classList.add('hidden');
+                nav.classList.remove('flex');
+            } else {
+                nav.classList.add('flex');
+                nav.classList.remove('hidden');
+                document.querySelectorAll('.nav-item').forEach(el => {
+                    if (el.dataset.target === screenId) {
+                        el.classList.add('nav-active');
+                        el.classList.remove('nav-inactive');
+                    } else {
+                        el.classList.remove('nav-active');
+                        el.classList.add('nav-inactive');
+                    }
+                });
+            }
+
+            if (screenId === 'screen-drawing') setTimeout(initCanvas, 50);
+        }
+
+        // ========== CHIZISH ==========
+        const canvas = document.getElementById('drawingCanvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let hasDrawn = false;
+        let drawEarned = 0; 
+        let currentAlphabet = [];
+        let currentLetterIndex = 0;
+        let totalLetters = 0;
+        let currentTask = null;
+
+        function initCanvas() {
+            const container = document.getElementById('canvas-container');
+            const dpr = window.devicePixelRatio || 1;
+            const rect = container.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.scale(dpr, dpr);
+            canvas.style.width = `${rect.width}px`;
+            canvas.style.height = `${rect.height}px`;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.lineWidth = 16;
+            ctx.strokeStyle = '#111827';
+        }
+
+        function getCoordinates(e) {
+            const rect = canvas.getBoundingClientRect();
+            if (e.type.includes('touch')) return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+            return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+        }
+
+        function startPosition(e) { isDrawing = true; hasDrawn = true; draw(e); }
+        function endPosition() { isDrawing = false; ctx.beginPath(); }
+        function draw(e) {
+            if (!isDrawing) return;
+            e.preventDefault();
+            const pos = getCoordinates(e);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+        }
+
+        canvas.addEventListener('mousedown', startPosition);
+        canvas.addEventListener('mouseup', endPosition);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseout', endPosition);
+        canvas.addEventListener('touchstart', startPosition, { passive: false });
+        canvas.addEventListener('touchend', endPosition);
+        canvas.addEventListener('touchmove', draw, { passive: false });
+
+        function clearCanvas() {
+            const dpr = window.devicePixelRatio || 1;
+            ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+            hasDrawn = false;
+            tg.HapticFeedback.selectionChanged();
+        }
+
+        function startDrawing(taskId) {
+            currentTask = tasksData.find(t => t.id === taskId);
+            
+            // Har bir til uchun alifbo
+            switch(currentTask.lang) {
+                case 'ru': currentAlphabet = ruAlphabet; break;
+                case 'en': currentAlphabet = enAlphabet; break;
+                case 'zh': currentAlphabet = zhAlphabet; break;
+                case 'ar': currentAlphabet = arAlphabet; break;
+                case 'kk': currentAlphabet = kkAlphabet; break;
+                case 'pl': currentAlphabet = plAlphabet; break;
+                default: currentAlphabet = uzAlphabet; // Standart O'zbek
+            }
+            
+            totalLetters = currentAlphabet.length;
+            currentLetterIndex = 0; 
+            drawEarned = 0; 
+            hasDrawn = false;
+            
+            document.getElementById('draw-total').innerText = `/ ${currentTask.price.toLocaleString('uz-UZ')} so'm`;
+            document.getElementById('draw-earned').innerText = '0';
+            
+            const template = document.getElementById('template-letter');
+            template.innerText = currentAlphabet[currentLetterIndex];
+            template.className = `absolute inset-0 flex items-center justify-center text-gray-200 pointer-events-none select-none transition-all duration-300 ${currentTask.css}`;
+            template.style.fontSize = currentTask.size;
+
+            updateDrawProgress(); clearCanvas(); showScreen('screen-drawing');
+        }
+
+        function nextLetter() {
+            if (!hasDrawn) {
+                tg.HapticFeedback.notificationOccurred('error');
+                showCustomAlert('Iltimos, "Tayyor" tugmasini bosishdan oldin harfni chizib oling!');
+                return;
+            }
+
+            drawEarned += currentTask.per;
+            document.getElementById('draw-earned').innerText = drawEarned.toLocaleString('uz-UZ');
+            globalLettersCount++; currentLetterIndex++;
+            
+            if (currentLetterIndex >= totalLetters) {
+                globalBalance += currentTask.price;
+                globalTasksCount++;
+                updateGlobalStats();
+                tg.HapticFeedback.notificationOccurred('success');
+                showCustomAlert('Topshiriq bajarildi! Pul balansingizga muvaffaqiyatli qo\'shildi.');
+                showScreen('screen-tasks');
+                return;
+            }
+
+            document.getElementById('template-letter').innerText = currentAlphabet[currentLetterIndex];
+            hasDrawn = false;
+            updateDrawProgress(); clearCanvas();
+            tg.HapticFeedback.impactOccurred('light');
+        }
+
+        function updateDrawProgress() {
+            document.getElementById('draw-progress').innerText = `Harf ${currentLetterIndex + 1} / ${totalLetters}`;
+        }
+
+        // ========== PUL YECHIB OLISH ==========
+        let currentMethod = 'sbp';
+        const withdrawInput = document.getElementById('withdraw-account');
+
+        function setWithdrawMethod(method) {
+            currentMethod = method;
+            const btnSbp = document.getElementById('btn-sbp');
+            const btnCard = document.getElementById('btn-card');
+            const bankSelector = document.getElementById('bank-selector');
+            withdrawInput.value = '';
+
+            if (method === 'sbp') {
+                withdrawInput.maxLength = 12;
+                withdrawInput.placeholder = "Telefon raqami (12 ta raqam)";
+                btnSbp.className = "flex-1 bg-[#5c61f4] text-white py-3.5 rounded-xl font-medium text-sm transition-colors shadow-sm";
+                btnCard.className = "flex-1 bg-transparent text-gray-500 py-3.5 rounded-xl font-medium text-sm transition-colors";
+                bankSelector.classList.remove('hidden');
+            } else {
+                withdrawInput.maxLength = 16;
+                withdrawInput.placeholder = "Karta raqami (16 ta raqam)";
+                btnCard.className = "flex-1 bg-[#5c61f4] text-white py-3.5 rounded-xl font-medium text-sm transition-colors shadow-sm";
+                btnSbp.className = "flex-1 bg-transparent text-gray-500 py-3.5 rounded-xl font-medium text-sm transition-colors";
+                bankSelector.classList.add('hidden');
+            }
+        }
+
+        function formatInput(input) {
+            input.value = input.value.replace(/\D/g, '');
+        }
+
+        function goToWithdraw() {
+            showScreen('screen-withdraw');
+        }
+
+        function attemptWithdraw() {
+            if (globalBalance < 75000) {
+                tg.HapticFeedback.notificationOccurred('error');
+                showCustomAlert('Balansingizda yetarli mablag\' yo\'q. Yechib olish uchun minimal summa 75 000 so\'m.');
+            } else if (withdrawInput.value.length < 12 && currentMethod === 'sbp') {
+                tg.HapticFeedback.notificationOccurred('error');
+                showCustomAlert('Iltimos, 12 raqamli telefon raqamini to\'liq kiriting.');
+            } else if (withdrawInput.value.length < 16 && currentMethod === 'card') {
+                tg.HapticFeedback.notificationOccurred('error');
+                showCustomAlert('Iltimos, 16 raqamli karta raqamini to\'liq kiriting.');
+            } else {
+                renderSponsors();
+                showScreen('screen-sponsor');
+            }
+        }
+
+        // ========== MAXSUS ALERT ==========
+        function showCustomAlert(message) {
+            const alertBg = document.getElementById('custom-alert');
+            const alertBox = document.getElementById('custom-alert-box');
+            document.getElementById('custom-alert-msg').innerText = message;
+            
+            alertBg.classList.remove('hidden');
+            setTimeout(() => {
+                alertBg.classList.remove('opacity-0');
+                alertBox.classList.remove('scale-95');
+                alertBox.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeCustomAlert() {
+            const alertBg = document.getElementById('custom-alert');
+            const alertBox = document.getElementById('custom-alert-box');
+            
+            alertBg.classList.add('opacity-0');
+            alertBox.classList.remove('scale-100');
+            alertBox.classList.add('scale-95');
+            
+            setTimeout(() => { alertBg.classList.add('hidden'); }, 300);
+        }
+    </script>
+
+</body></html>
