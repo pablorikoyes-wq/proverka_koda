@@ -9,19 +9,17 @@
   window.VERIFY_CHANNELS = [];
   window.BOT_ID = 493;
 </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Fontmaker App</title>
-    
-    <!-- === ПОДКЛЮЧЕННЫЕ БИБЛИОТЕКИ === -->
+
+    <!-- === ULANGAN KUTUBXONALAR === -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script><style> ::-webkit-scrollbar { 	border-radius: 5px !important; 	border: 3px solid transparent !important; 	background-color: rgba(255, 255, 255, 0.101961) !important; 	background-clip: content-box !important; 	width: 10px !important; } ::-webkit-scrollbar:hover { 	background-color: rgba(255, 255, 255, 0.172549) !important; } ::-webkit-scrollbar-thumb { 	border-radius: 5px !important; 	border: 3px solid transparent !important; 	background-color: rgba(255, 255, 255, 0.32549) !important; 	background-clip: content-box !important; } ::-webkit-scrollbar-thumb:hover { 	background-color: rgba(255, 255, 255, 0.478431) !important; } </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Bad+Script&family=Caveat&family=Dancing+Script&family=Inter:wght@400;600;700;800;900&family=Marck+Script&family=Nanum+Pen+Script&family=Neucha&family=Noto+Naskh+Arabic&family=Noto+Sans+KR&family=Noto+Sans+SC&family=Roboto+Mono&family=UnifrakturMaguntia&family=Zhi+Mang+Xing&display=swap');
-        
+
         :root {
             --bg: #F8F9FA;
             --white: #FEFEFE;
@@ -32,7 +30,6 @@
             --green: #34C759;
             --red: #FF3B30;
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -40,7 +37,6 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
-
         body {
             background-color: var(--bg);
             color: #000;
@@ -48,7 +44,6 @@
             display: flex;
             justify-content: center;
         }
-
         .app-container {
             width: 100%;
             max-width: 600px;
@@ -58,7 +53,6 @@
             display: flex;
             flex-direction: column;
         }
-
         .page {
             display: none;
             width: 100%;
@@ -70,12 +64,10 @@
             overflow: hidden;
             background-color: var(--bg);
         }
-
         .page.active {
             display: flex;
         }
-
-        /* --- СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ --- */
+        /* --- BOSH SAHIFA STILLARI --- */
         .main-header {
             padding: 16px;
             display: flex;
@@ -85,7 +77,6 @@
             background-color: var(--bg);
             flex-shrink: 0;
         }
-
         .profile-block {
             background: var(--white);
             padding: 10px 16px;
@@ -97,7 +88,6 @@
             flex-grow: 1;
             margin-right: 12px;
         }
-
         .avatar {
             width: 40px;
             height: 40px;
@@ -110,19 +100,16 @@
             color: var(--purple);
             overflow: hidden;
         }
-
         .profile-info .name {
             font-size: 16px;
             font-weight: 700;
             color: #000;
         }
-
         .profile-info .role {
             font-size: 12px;
             color: var(--purple);
             font-weight: 500;
         }
-
         .btn-profile-square {
             width: 44px;
             height: 44px;
@@ -136,13 +123,12 @@
             box-shadow: 0 0 14px rgba(107, 82, 251, 0.5);
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        
+
         .btn-profile-square:active {
             transform: scale(0.95);
             box-shadow: 0 0 8px rgba(107, 82, 251, 0.7);
         }
-
-        /* Карта баланса */
+        /* Balans kartasi */
         .balance-card-wrapper {
             padding: 0 16px;
             margin-bottom: 16px;
@@ -153,7 +139,6 @@
             transform: scaleY(1);
             transform-origin: top;
         }
-
         .balance-card-wrapper.collapsed {
             max-height: 0;
             opacity: 0;
@@ -161,7 +146,6 @@
             transform: scaleY(0.9);
             pointer-events: none;
         }
-
         .balance-card {
             background: linear-gradient(135deg, var(--purple) 0%, #5035ED 100%);
             border-radius: 24px;
@@ -174,7 +158,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .balance-card::before {
             content: '';
             position: absolute;
@@ -185,7 +169,6 @@
             background: rgba(255,255,255,0.06);
             border-radius: 50%;
         }
-
         .balance-label {
             font-size: 11px;
             color: rgba(255, 255, 255, 0.75);
@@ -193,13 +176,11 @@
             letter-spacing: 1.5px;
             font-weight: 700;
         }
-
         .balance-amount {
             font-size: 38px;
             font-weight: 800;
             letter-spacing: -0.5px;
         }
-
         .btn-withdraw-card {
             background: var(--white);
             color: var(--purple);
@@ -216,19 +197,17 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: background 0.2s;
         }
-        
+
         .btn-withdraw-card:active {
             background: #F2F0FF;
         }
-
-        /* Переключатель табов */
+        /* Tablar almashtirgichi */
         .tabs-container {
             padding: 0 16px 12px 16px;
             background: var(--bg);
             z-index: 10;
             flex-shrink: 0;
         }
-
         .tabs-toggle {
             background: var(--light-grey);
             border-radius: 12px;
@@ -237,7 +216,6 @@
             position: relative;
             height: 44px;
         }
-
         .tab-btn {
             flex: 1;
             background: transparent;
@@ -249,11 +227,9 @@
             cursor: pointer;
             transition: color 0.3s;
         }
-
         .tab-btn.active {
             color: #000;
         }
-
         .tab-indicator {
             position: absolute;
             top: 4px;
@@ -266,8 +242,7 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 2px 6px rgba(0,0,0,0.06);
         }
-
-        /* Список заданий со скроллом */
+        /* Skroll bilan topshiriqlar ro'yxati */
         .tasks-scroll-view {
             flex-grow: 1;
             overflow-y: auto;
@@ -276,7 +251,6 @@
             flex-direction: column;
             gap: 12px;
         }
-
         .task-card {
             background: var(--white);
             border-radius: 16px;
@@ -287,19 +261,16 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
             cursor: pointer;
         }
-
         .task-main-row {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
         }
-
         .task-left {
             display: flex;
             gap: 12px;
             align-items: center;
         }
-
         .task-preview-box {
             width: 48px;
             height: 48px;
@@ -313,37 +284,31 @@
             color: #3A3A3C;
             background: #FAFAFA;
             line-height: normal;
-            overflow: visible; 
+            overflow: visible;
         }
-
         .task-meta .task-title {
             font-size: 15px;
             font-weight: 700;
             color: #000;
             margin-bottom: 2px;
         }
-
         .task-meta .task-desc {
             font-size: 12px;
             color: var(--grey);
         }
-
         .task-right {
             text-align: right;
         }
-
         .task-price {
             font-size: 16px;
             font-weight: 700;
             color: var(--green);
         }
-
         .task-price-per {
             font-size: 11px;
             color: var(--grey);
             margin-top: 2px;
         }
-
         .task-badge-time {
             align-self: flex-start;
             background: rgba(107, 82, 251, 0.1);
@@ -356,7 +321,6 @@
             align-items: center;
             gap: 4px;
         }
-
         .btn-stats-floating {
             position: absolute;
             bottom: 24px;
@@ -374,12 +338,11 @@
             z-index: 99;
             transition: transform 0.2s;
         }
-        
+
         .btn-stats-floating:active {
             transform: scale(0.92);
         }
-
-        /* --- СТИЛИ СТРАНИЦЫ ВЫПОЛНЕНИЯ --- */
+        /* --- BAJARISH SAHIFASI STILLARI --- */
         .sub-header {
             padding: 16px;
             display: flex;
@@ -388,7 +351,6 @@
             background: var(--bg);
             flex-shrink: 0;
         }
-
         .btn-back {
             background: transparent;
             border: none;
@@ -397,7 +359,6 @@
             align-items: center;
             color: var(--purple);
         }
-
         .sub-header-title {
             font-size: 17px;
             font-weight: 700;
@@ -405,7 +366,6 @@
             flex-grow: 1;
             margin-right: 24px;
         }
-
         .letters-carousel {
             padding: 0 16px;
             display: flex;
@@ -416,7 +376,6 @@
             align-items: center;
             flex-shrink: 0;
         }
-
         .carousel-item {
             min-width: 44px;
             height: 44px;
@@ -428,19 +387,16 @@
             justify-content: center;
             font-size: 22px;
             transition: all 0.3s;
-            line-height: normal; 
-            overflow: visible; 
+            line-height: normal;
+            overflow: visible;
         }
-
         .carousel-item.active {
             border-color: var(--grey);
         }
-
         .carousel-item.completed {
             border-color: var(--purple);
             background: rgba(107, 82, 251, 0.05);
         }
-
         .progress-row {
             padding: 0 16px;
             display: flex;
@@ -449,7 +405,6 @@
             margin-bottom: 12px;
             flex-shrink: 0;
         }
-
         .letter-counter-badge {
             background: var(--white);
             border: 1px solid var(--light-grey);
@@ -458,18 +413,15 @@
             font-size: 13px;
             font-weight: 600;
         }
-
         .earned-text {
             font-size: 14px;
             font-weight: 600;
             color: var(--grey);
         }
-
         .earned-text span {
             color: var(--green);
             font-weight: 700;
         }
-
         .canvas-container {
             padding: 0 16px;
             flex-grow: 1;
@@ -477,7 +429,6 @@
             flex-direction: column;
             position: relative;
         }
-
         .canvas-board {
             flex-grow: 1;
             background: var(--white);
@@ -487,7 +438,6 @@
             overflow: hidden;
             min-height: 220px;
         }
-
         .stencil-overlay {
             position: absolute;
             top: 50%;
@@ -501,7 +451,6 @@
             overflow: visible;
             white-space: nowrap;
         }
-
         canvas {
             position: absolute;
             top: 0;
@@ -510,7 +459,6 @@
             height: 100%;
             z-index: 2;
         }
-
         .drawing-controls {
             display: flex;
             justify-content: space-around;
@@ -520,7 +468,6 @@
             flex-shrink: 0;
             position: relative;
         }
-
         .tool-btn {
             background: var(--white);
             border: 1px solid var(--light-grey);
@@ -535,7 +482,6 @@
             flex: 1;
             justify-content: center;
         }
-
         .popover-menu {
             display: none;
             position: absolute;
@@ -547,11 +493,9 @@
             z-index: 120;
             gap: 10px;
         }
-
         .popover-menu.active {
             display: flex;
         }
-
         .brush-option {
             padding: 8px 12px;
             border-radius: 8px;
@@ -561,13 +505,11 @@
             cursor: pointer;
             font-weight: 600;
         }
-
         .brush-option.active {
             background: var(--purple);
             color: var(--white);
             border-color: var(--purple);
         }
-
         .color-dot {
             width: 32px;
             height: 32px;
@@ -575,19 +517,16 @@
             cursor: pointer;
             border: 2px solid transparent;
         }
-
         .color-dot.active {
             border-color: #000;
             transform: scale(1.1);
         }
-
         .timer-badge-wrap {
             display: flex;
             justify-content: center;
             margin-bottom: 12px;
             flex-shrink: 0;
         }
-
         .timer-badge {
             background: var(--purple);
             color: var(--white);
@@ -599,12 +538,10 @@
             align-items: center;
             gap: 6px;
         }
-
         .action-area {
             padding: 0 16px 20px 16px;
             flex-shrink: 0;
         }
-
         .btn-primary-action {
             width: 100%;
             height: 54px;
@@ -621,18 +558,16 @@
             gap: 8px;
             transition: opacity 0.2s;
         }
-        
+
         .btn-primary-action:disabled {
             cursor: not-allowed;
             opacity: 0.7;
         }
-
         .game-controls-row {
             display: none;
             gap: 12px;
             width: 100%;
         }
-
         .btn-action-square {
             width: 54px;
             height: 54px;
@@ -644,7 +579,6 @@
             justify-content: center;
             cursor: pointer;
         }
-
         .btn-next-step {
             flex-grow: 1;
             height: 54px;
@@ -660,13 +594,11 @@
             justify-content: center;
             gap: 8px;
         }
-
         .btn-next-step.active {
             background: var(--purple);
             color: var(--white);
             cursor: pointer;
         }
-
         .overlay-fullscreen {
             display: none;
             position: absolute;
@@ -682,16 +614,14 @@
             padding: 24px;
             text-align: center;
         }
-
         .overlay-fullscreen.active {
             display: flex;
         }
-
         .success-checkmark-svg {
             overflow: visible;
             padding: 4px;
         }
-        
+
         .success-checkmark-svg circle {
             stroke-dasharray: 166;
             stroke-dashoffset: 166;
@@ -701,7 +631,7 @@
             fill: none;
             animation: strokeCheck 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
         }
-        
+
         .success-checkmark-svg path {
             transform-origin: 50% 50%;
             stroke-dasharray: 48;
@@ -713,19 +643,17 @@
             fill: none;
             animation: strokeCheck 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards;
         }
-        
+
         @keyframes strokeCheck {
             100% { stroke-dashoffset: 0; }
         }
-
-        /* --- СТИЛИ СТРАНИЦЫ СТАТИСТИКИ --- */
+        /* --- STATISTIKA SAHIFASI STILLARI --- */
         .stats-grid {
             padding: 16px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
         }
-
         .stats-card {
             background: var(--white);
             border-radius: 16px;
@@ -733,30 +661,25 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             border: 1px solid rgba(0,0,0,0.03);
         }
-
         .stats-card.full-width {
             grid-column: span 2;
         }
-
         .stats-card-label {
             font-size: 12px;
             color: var(--grey);
             margin-bottom: 6px;
         }
-
         .stats-card-value {
             font-size: 22px;
             font-weight: 800;
             color: #000;
         }
-
         .level-container {
             display: flex;
             align-items: center;
             gap: 16px;
             margin-top: 8px;
         }
-
         .level-progress-circle {
             width: 50px;
             height: 50px;
@@ -769,15 +692,13 @@
             font-weight: 700;
             font-size: 14px;
         }
-
-        /* --- СТИЛИ СТРАНИЦЫ ПРОФИЛЯ --- */
+        /* --- PROFIL SAHIFASI STILLARI --- */
         .profile-container {
             padding: 16px;
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
-
         .profile-main-card {
             background: var(--white);
             border-radius: 20px;
@@ -788,33 +709,28 @@
             text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
-
         .profile-main-card .avatar {
             width: 72px;
             height: 72px;
             font-size: 28px;
             margin-bottom: 12px;
         }
-
         .profile-status-badged {
             margin-top: 8px;
             font-size: 13px;
             font-weight: 700;
             color: var(--red);
         }
-
         .profile-meta-text {
             font-size: 12px;
             color: var(--grey);
             margin-top: 4px;
         }
-
         .profile-menu-list {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
-
         .menu-row-btn {
             background: var(--white);
             border: none;
@@ -828,14 +744,12 @@
             cursor: pointer;
             text-align: left;
         }
-
         .menu-row-btn .left-side {
             display: flex;
             align-items: center;
             gap: 12px;
         }
-
-        /* --- ПОПАП ВЕРИФИКАЦИИ --- */
+        /* --- VERIFIKATSIYA POPAPI --- */
         .lock-overlay {
             display: none;
             opacity: 0;
@@ -852,11 +766,9 @@
             padding: 20px;
             transition: opacity 0.5s ease;
         }
-
         .lock-overlay.active {
             display: flex;
         }
-
         .lock-modal {
             background: var(--white);
             border-radius: 24px;
@@ -870,18 +782,16 @@
             transform: scale(0.9);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        
+
         .lock-overlay.active .lock-modal {
             transform: scale(1);
         }
-
         .avatar-verification-wrap {
             position: relative;
             width: 84px;
             height: 84px;
             margin: 0 auto 16px auto;
         }
-
         .avatar-verif {
             width: 84px;
             height: 84px;
@@ -896,7 +806,6 @@
             color: var(--purple);
             overflow: hidden;
         }
-
         .badge-verif-check {
             position: absolute;
             bottom: 0;
@@ -910,15 +819,13 @@
             align-items: center;
             justify-content: center;
         }
-
         .static-confetti {
             position: absolute;
             width: 8px;
             height: 8px;
             border-radius: 2px;
         }
-
-        /* --- СТИЛИ СТРАНИЦЫ ВЫВОДА --- */
+        /* --- YECHIB OLISH SAHIFASI STILLARI --- */
         .withdraw-input-box {
             background: var(--white);
             border-radius: 20px;
@@ -926,26 +833,23 @@
             margin: 16px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
-
         .logos-row {
             display: flex;
             gap: 16px;
             margin-bottom: 18px;
             align-items: center;
         }
-        
+
         .logo-img-asset {
             height: 20px;
             object-fit: contain;
         }
-
         .input-field-wrap {
             position: relative;
             display: flex;
             align-items: center;
             width: 100%;
         }
-
         .real-withdraw-input {
             width: 100%;
             height: 56px;
@@ -959,12 +863,11 @@
             color: #000;
             transition: border-color 0.2s;
         }
-        
+
         .real-withdraw-input:focus {
             border-color: var(--purple);
             background: #FEFEFE;
         }
-
         .input-currency-label {
             position: absolute;
             right: 18px;
@@ -972,7 +875,6 @@
             font-weight: 700;
             color: #000;
         }
-
         .payment-methods-title {
             padding: 0 16px;
             font-size: 12px;
@@ -982,7 +884,6 @@
             margin-bottom: 10px;
             letter-spacing: 0.5px;
         }
-
         .methods-grid {
             padding: 0 16px;
             display: grid;
@@ -990,7 +891,6 @@
             gap: 12px;
             margin-bottom: 20px;
         }
-
         .method-card {
             background: var(--white);
             border: 2px solid transparent;
@@ -1006,12 +906,10 @@
             font-size: 14px;
             transition: border-color 0.2s, background 0.2s;
         }
-
         .method-card.active {
             border-color: var(--purple);
             background: rgba(107, 82, 251, 0.02);
         }
-
         .sbp-banks-section {
             display: none;
             padding: 0 16px;
@@ -1021,11 +919,9 @@
             max-height: 240px;
             overflow-y: auto;
         }
-
         .sbp-banks-section.active {
             display: flex;
         }
-
         .bank-row-item {
             background: var(--white);
             border: 1px solid var(--light-grey);
@@ -1039,12 +935,11 @@
             cursor: pointer;
             transition: border-color 0.2s, background 0.2s;
         }
-
         .bank-row-item.active {
             border-color: var(--purple);
             background: rgba(107, 82, 251, 0.03);
         }
-        
+
         .bank-logo-img {
             width: 32px;
             height: 32px;
@@ -1052,7 +947,6 @@
             object-fit: contain;
             flex-shrink: 0;
         }
-
         .btn-withdraw-stretched {
             width: calc(100% - 8px);
             margin: 0 auto;
@@ -1069,14 +963,13 @@
             justify-content: center;
             transition: background 0.3s, color 0.3s;
         }
-        
+
         .btn-withdraw-stretched.active {
             background: var(--purple);
             color: var(--white);
             cursor: pointer;
         }
-
-        /* Тост-уведомление */
+        /* Toast-bildirishnoma */
         .toast-notification {
             position: absolute;
             top: -60px;
@@ -1095,11 +988,9 @@
         .toast-notification.show {
             top: 24px;
         }
-
     </style>
 <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-\[24px\]{margin-bottom:24px}.mt-auto{margin-top:auto}.flex{display:flex}.hidden{display:none}.h-24{height:6rem}.h-\[100px\]{height:100px}.h-full{height:100%}.w-24{width:6rem}.w-\[100px\]{width:100px}.w-full{width:100%}.flex-grow{flex-grow:1}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.overflow-y-auto{overflow-y:auto}.rounded-xl{border-radius:0.75rem}.border-2{border-width:2px}.border-\[\#FFC107\]{--tw-border-opacity:1;border-color:rgb(255 193 7 / var(--tw-border-opacity, 1))}.bg-\[\#FFF8E1\]{--tw-bg-opacity:1;background-color:rgb(255 248 225 / var(--tw-bg-opacity, 1))}.bg-\[var\(--bg\)\]{background-color:var(--bg)}.p-4{padding:1rem}.p-6{padding:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[13px\]{font-size:13px}.text-\[14px\]{font-size:14px}.font-black{font-weight:900}.font-bold{font-weight:700}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.text-\[\#8F6B00\]{--tw-text-opacity:1;color:rgb(143 107 0 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}</style><style> ::-webkit-scrollbar { 	border-radius: 5px !important; 	border: 3px solid transparent !important; 	background-color: rgba(255, 255, 255, 0.101961) !important; 	background-clip: content-box !important; 	width: 10px !important; } ::-webkit-scrollbar:hover { 	background-color: rgba(255, 255, 255, 0.172549) !important; } ::-webkit-scrollbar-thumb { 	border-radius: 5px !important; 	border: 3px solid transparent !important; 	background-color: rgba(255, 255, 255, 0.32549) !important; 	background-clip: content-box !important; } ::-webkit-scrollbar-thumb:hover { 	background-color: rgba(255, 255, 255, 0.478431) !important; } </style></head>
 <body>
-
 <div style="position: absolute; width: 0; height: 0; overflow: hidden; visibility: hidden; pointer-events: none;">
     <span style="font-family: 'Aref Ruqaa';">a</span>
     <span style="font-family: 'Bad Script';">a</span>
@@ -1115,384 +1006,370 @@
     <span style="font-family: 'UnifrakturMaguntia';">a</span>
     <span style="font-family: 'Zhi Mang Xing';">a</span>
 </div>
-
 <div class="app-container">
-    <div id="toast" class="toast-notification">Уведомление</div>
-
-    <!-- Попап блокировки -->
+    <div id="toast" class="toast-notification">Bildirishnoma</div>
+    <!-- Bloklash popapi -->
     <div id="lockOverlay" class="lock-overlay">
         <div class="lock-modal">
             <div class="static-confetti" style="top:20px; left:40px; background:#FFD700; transform:rotate(15deg);"></div>
             <div class="static-confetti" style="top:60px; right:35px; background:#FF4500; transform:rotate(45deg);"></div>
             <div class="static-confetti" style="bottom:120px; left:30px; background:#00FF7F; transform:rotate(115deg);"></div>
             <div class="static-confetti" style="top:110px; left:70px; background:#1E90FF; transform:rotate(70deg);"></div>
-            
+
             <div class="avatar-verification-wrap">
                 <div class="avatar-verif UI-user-avatar"><img src="https://t.me/i/userpic/320/EMHY_QbdEjGgcXlHc1Ln3OG2ddX0-LUa_0l-8HoSmwnQXPnWnCQV9397C0AK9zXu.svg" style="width:100%; height:100%; border-radius:50%; object-fit:cover;"></div>
                 <div class="badge-verif-check">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </div>
             </div>
-            <div class="overlay-title" style="font-size: 20px; font-weight:800;">Подтвердите профиль</div>
+            <div class="overlay-title" style="font-size: 20px; font-weight:800;">Profilni tasdiqlang</div>
             <div class="overlay-subtitle" style="font-size: 13px; margin-bottom: 20px; line-height: 1.5; color: #333;">
-                Чтобы перейти к следующим заданиям, вам нужно подтвердить ваш профиль путем вывода доступных средств. Если этого не сделать в течение трех часов, то профиль будет <span style="color: var(--red); font-weight: 700;">неподтвержден</span> и <span style="color: var(--red); font-weight: 700;">удален</span>, и вы <span style="color: var(--red); font-weight: 700;">потеряете</span> свой прогресс и заработанные средства.
+                Keyingi topshiriqlarga o'tish uchun mavjud mablag'larni yechib olish orqali profilingizni tasdiqlashingiz kerak. Agar buni uch soat ichida amalga oshirmasangiz, profil <span style="color: var(--red); font-weight: 700;">tasdiqlanmagan</span> deb hisoblanadi va <span style="color: var(--red); font-weight: 700;">o'chiriladi</span>, siz esa jarayoningiz va ishlagan mablag'ingizni <span style="color: var(--red); font-weight: 700;">yo'qotasiz</span>.
             </div>
-            <button class="btn-primary-action" onclick="goToWithdrawPageFromLock()">Вывести средства</button>
+            <button class="btn-primary-action" onclick="goToWithdrawPageFromLock()">Pul yechib olish</button>
         </div>
     </div>
-
-    <!-- Главная страница -->
+    <!-- Bosh sahifa -->
     <div id="pageMain" class="page active">
         <div class="main-header">
             <div class="profile-block">
                 <div class="avatar UI-user-avatar"><img src="https://t.me/i/userpic/320/EMHY_QbdEjGgcXlHc1Ln3OG2ddX0-LUa_0l-8HoSmwnQXPnWnCQV9397C0AK9zXu.svg" style="width:100%; height:100%; border-radius:50%; object-fit:cover;"></div>
                 <div class="profile-info">
                     <div class="name UI-user-name">⁠⁠⁠⁠</div>
-                    <div class="role">Шрифтмейкер</div>
+                    <div class="role">Shrift ustasi</div>
                 </div>
             </div>
             <button class="btn-profile-square" onclick="switchPage('pageProfile')">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </button>
         </div>
-
         <div id="balanceWrapper" class="balance-card-wrapper">
             <div class="balance-card">
                 <div>
-                    <div class="balance-label">ваш баланс</div>
+                    <div class="balance-label">sizning balansingiz</div>
                     <div class="balance-amount"><span id="mainBalanceDisplay">0</span> ₽</div>
                 </div>
                 <button class="btn-withdraw-card" onclick="handleMainWithdrawClick()">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 18V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"></path><path d="M3 10h18"></path><circle cx="17" cy="14" r="1"></circle></svg>
-                    Вывести средства
+                    Pul yechib olish
                 </button>
             </div>
         </div>
-
         <div class="tabs-container">
             <div class="tabs-toggle">
                 <div id="tabIndicator" class="tab-indicator"></div>
-                <button id="btnTabPopular" class="tab-btn active" onclick="setTab('popular')">Популярные</button>
-                <button id="btnTabAll" class="tab-btn" onclick="setTab('all')">Все задания</button>
+                <button id="btnTabPopular" class="tab-btn active" onclick="setTab('popular')">Ommabop</button>
+                <button id="btnTabAll" class="tab-btn" onclick="setTab('all')">Barcha topshiriqlar</button>
             </div>
         </div>
-
         <div id="tasksScrollView" class="tasks-scroll-view"><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: Inter, sans-serif;">А</div>
                         <div class="task-meta">
-                            <div class="task-title">Русский печатный</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Ruscha bosma</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1458 ₽</div>
-                        <div class="task-price-per">44 ₽/шт.</div>
+                        <div class="task-price-per">44 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    3 мин.
+                    3 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Caveat&quot;, cursive;">A</div>
                         <div class="task-meta">
-                            <div class="task-title">Английский рукописный</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Inglizcha qo'lyozma</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1414 ₽</div>
-                        <div class="task-price-per">54 ₽/шт.</div>
+                        <div class="task-price-per">54 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    4 мин.
+                    4 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Bad Script&quot;, cursive;">A</div>
                         <div class="task-meta">
-                            <div class="task-title">Французский прописной</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Frantsuzcha yozma</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1142 ₽</div>
-                        <div class="task-price-per">27 ₽/шт.</div>
+                        <div class="task-price-per">27 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    3 мин.
+                    3 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Zhi Mang Xing&quot;, cursive;">一</div>
                         <div class="task-meta">
-                            <div class="task-title">Китайский каллиграфический</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Xitoycha kalligrafik</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">908 ₽</div>
-                        <div class="task-price-per">53 ₽/шт.</div>
+                        <div class="task-price-per">53 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    3 мин.
+                    3 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Nanum Pen Script&quot;, cursive;">ㄱ</div>
                         <div class="task-meta">
-                            <div class="task-title">Корейский курсивный</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Koreyscha kursiv</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1131 ₽</div>
-                        <div class="task-price-per">47 ₽/шт.</div>
+                        <div class="task-price-per">47 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    3 мин.
+                    3 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Aref Ruqaa&quot;, serif;">ا</div>
                         <div class="task-meta">
-                            <div class="task-title">Арабский каллиграфический</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Arabcha kalligrafik</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">2000 ₽</div>
-                        <div class="task-price-per">74 ₽/шт.</div>
+                        <div class="task-price-per">74 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    5 мин.
+                    5 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Caveat&quot;, cursive;">А</div>
                         <div class="task-meta">
-                            <div class="task-title">Русский рукописный</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Ruscha qo'lyozma</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1430 ₽</div>
-                        <div class="task-price-per">43 ₽/шт.</div>
+                        <div class="task-price-per">43 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    3 мин.
+                    3 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Roboto Mono&quot;, monospace;">A</div>
                         <div class="task-meta">
-                            <div class="task-title">Английский прописной</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Inglizcha yozma</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1230 ₽</div>
-                        <div class="task-price-per">47 ₽/шт.</div>
+                        <div class="task-price-per">47 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    4 мин.
+                    4 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Marck Script&quot;, cursive;">A</div>
                         <div class="task-meta">
-                            <div class="task-title">Французский каллиграфический</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Frantsuzcha kalligrafik</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1363 ₽</div>
-                        <div class="task-price-per">32 ₽/шт.</div>
+                        <div class="task-price-per">32 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    3 мин.
+                    3 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Zhi Mang Xing&quot;, cursive;">一</div>
                         <div class="task-meta">
-                            <div class="task-title">Китайский курсивный</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Xitoycha kursiv</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1059 ₽</div>
-                        <div class="task-price-per">62 ₽/шт.</div>
+                        <div class="task-price-per">62 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    3 мин.
+                    3 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Noto Sans KR&quot;, sans-serif;">ㄱ</div>
                         <div class="task-meta">
-                            <div class="task-title">Корейский печатный</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Koreyscha bosma</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1315 ₽</div>
-                        <div class="task-price-per">55 ₽/шт.</div>
+                        <div class="task-price-per">55 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    4 мин.
+                    4 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Aref Ruqaa&quot;, serif;">ا</div>
                         <div class="task-meta">
-                            <div class="task-title">Арабский каллиграфический</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Arabcha kalligrafik</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">2000 ₽</div>
-                        <div class="task-price-per">74 ₽/шт.</div>
+                        <div class="task-price-per">74 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    5 мин.
+                    5 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Bad Script&quot;, cursive;">А</div>
                         <div class="task-meta">
-                            <div class="task-title">Русский прописной</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Ruscha yozma</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">996 ₽</div>
-                        <div class="task-price-per">30 ₽/шт.</div>
+                        <div class="task-price-per">30 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    3 мин.
+                    3 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Dancing Script&quot;, cursive;">A</div>
                         <div class="task-meta">
-                            <div class="task-title">Английский каллиграфический</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Inglizcha kalligrafik</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1444 ₽</div>
-                        <div class="task-price-per">56 ₽/шт.</div>
+                        <div class="task-price-per">56 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    3 мин.
+                    3 daq.
                 </div>
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style="font-family: &quot;Neucha&quot;, cursive;">A</div>
                         <div class="task-meta">
-                            <div class="task-title">Французский курсивный</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-title">Frantsuzcha kursiv</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">1061 ₽</div>
-                        <div class="task-price-per">25 ₽/шт.</div>
+                        <div class="task-price-per">25 ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    3 мин.
+                    3 daq.
                 </div>
             </div></div>
-
         <button class="btn-stats-floating" onclick="switchPage('pageStats')">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path></svg>
         </button>
     </div>
-
-    <!-- Страница выполнения задания -->
+    <!-- Topshiriqni bajarish sahifasi -->
     <div id="pageTaskExec" class="page">
         <div class="sub-header">
             <button class="btn-back" onclick="switchPage('pageMain')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </button>
-            <div id="execTaskTitle" class="sub-header-title">Русский печатный</div>
+            <div id="execTaskTitle" class="sub-header-title">Ruscha bosma</div>
         </div>
-
         <div id="lettersCarousel" class="letters-carousel"></div>
-
         <div class="progress-row">
-            <div id="letterCounter" class="letter-counter-badge">Буква 1 из 33</div>
-            <div class="earned-text">Заработано: <span id="earnedVolumeDisplay">0 ₽</span></div>
+            <div id="letterCounter" class="letter-counter-badge">1-harf, 33 tadan</div>
+            <div class="earned-text">Ishlangan: <span id="earnedVolumeDisplay">0 ₽</span></div>
         </div>
-
         <div class="canvas-container">
             <div class="canvas-board" id="canvasBoard">
                 <div id="canvasStencil" class="stencil-overlay">А</div>
                 <canvas id="paintCanvas"></canvas>
             </div>
         </div>
-
         <div class="drawing-controls" id="drawingControlsGroup">
             <button class="tool-btn" onclick="togglePopover('brushPopover')">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M7.42 10.96a5 5 0 0 1 9.16 0"></path></svg>
-                Кисть: <span id="lblActiveBrush" style="font-weight:700;">Круглая</span>
+                Cho'tka: <span id="lblActiveBrush" style="font-weight:700;">Yumaloq</span>
             </button>
             <button class="tool-btn" onclick="togglePopover('colorPopover')">
                 <span id="colorIndicatorCircle" style="width:14px; height:14px; background:#000; border-radius:50%; display:inline-block;"></span>
-                Палитра
+                Palitra
             </button>
-
             <div id="brushPopover" class="popover-menu" style="left: 16px;">
-                <div class="brush-option active" onclick="selectBrush('round', 'Круглая', this)">Маркер</div>
-                <div class="brush-option" onclick="selectBrush('calligraphy', 'Перо', this)">Перо</div>
-                <div class="brush-option" onclick="selectBrush('thin', 'Тонкая', this)">Линер</div>
+                <div class="brush-option active" onclick="selectBrush('round', 'Yumaloq', this)">Marker</div>
+                <div class="brush-option" onclick="selectBrush('calligraphy', 'Qalam', this)">Qalam</div>
+                <div class="brush-option" onclick="selectBrush('thin', 'Ingichka', this)">Layner</div>
             </div>
-
             <div id="colorPopover" class="popover-menu" style="right: 16px; display: none; gap: 8px;">
                 <div class="color-dot active" style="background: #000000;" onclick="selectColor('#000000', this)"></div>
                 <div class="color-dot" style="background: #6B52FB;" onclick="selectColor('#6B52FB', this)"></div>
@@ -1500,30 +1377,26 @@
                 <div class="color-dot" style="background: #34C759;" onclick="selectColor('#34C759', this)"></div>
             </div>
         </div>
-
         <div class="timer-badge-wrap">
             <div class="timer-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 <span id="execTimerClock">3:00</span>
             </div>
         </div>
-
         <div class="action-area">
             <button id="btnStartTask" class="btn-primary-action" onclick="startTaskGameplay()">
-                Начать выполнение
+                Bajarishni boshlash
             </button>
-
             <div id="gameplayActionsGroup" class="game-controls-row">
                 <button class="btn-action-square" onclick="clearCanvas()">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
                 </button>
                 <button id="btnNextLetter" class="btn-next-step" onclick="commitLetterNext()">
-                    Далее
+                    Keyingi
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </button>
             </div>
         </div>
-
         <div id="taskSuccessOverlay" class="overlay-fullscreen">
             <div style="padding: 10px; overflow: visible; display: flex; justify-content: center; align-items: center;">
                 <svg class="success-checkmark-svg w-[100px] h-[100px] mb-[24px]" viewBox="0 0 60 60">
@@ -1531,167 +1404,152 @@
                     <path d="M18 31l8 8 16-16"></path>
                 </svg>
             </div>
-            <h1 style="font-size: 28px; font-weight: 900; color: #000; margin-bottom: 8px; letter-spacing: -0.5px;">Задание выполнено!</h1>
-            <p style="font-size: 15px; font-weight: 600; color: var(--grey); line-height: 1.4; max-width: 280px; margin: 0 auto 24px auto;">Поздравляем! Ваш индивидуальный шрифт успешно оцифрован.</p>
+            <h1 style="font-size: 28px; font-weight: 900; color: #000; margin-bottom: 8px; letter-spacing: -0.5px;">Topshiriq bajarildi!</h1>
+            <p style="font-size: 15px; font-weight: 600; color: var(--grey); line-height: 1.4; max-width: 280px; margin: 0 auto 24px auto;">Tabriklaymiz! Sizning individual shriftingiz muvaffaqiyatli raqamlashtirildi.</p>
             <div style="font-size: 38px; font-weight: 900; color: var(--green); margin-bottom: 36px;">+<span id="overlayRewardDisplay">0</span> ₽</div>
-            <button class="btn-primary-action" onclick="triggerPostTaskLock()">Вернуться в главное меню</button>
+            <button class="btn-primary-action" onclick="triggerPostTaskLock()">Bosh menyuga qaytish</button>
         </div>
     </div>
-
-    <!-- Страница статистики -->
+    <!-- Statistika sahifasi -->
     <div id="pageStats" class="page">
         <div class="sub-header">
             <button class="btn-back" onclick="switchPage('pageMain')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </button>
-            <div class="sub-header-title">Статистика</div>
+            <div class="sub-header-title">Statistika</div>
         </div>
-
         <div class="stats-grid">
             <div class="stats-card">
-                <div class="stats-card-label">Всего заработано</div>
+                <div class="stats-card-label">Jami ishlangan</div>
                 <div class="stats-card-value" style="color: var(--green);"><span id="statsEarned">0</span> ₽</div>
             </div>
             <div class="stats-card">
-                <div class="stats-card-label">Оцифровано букв</div>
+                <div class="stats-card-label">Raqamlashtirilgan harflar</div>
                 <div class="stats-card-value" id="statsLetters">0</div>
             </div>
             <div class="stats-card">
-                <div class="stats-card-label">Заданий сдано</div>
+                <div class="stats-card-label">Bajarilgan topshiriqlar</div>
                 <div class="stats-card-value" id="statsTasksCount">0</div>
             </div>
             <div class="stats-card">
-                <div class="stats-card-label">Точность линий</div>
+                <div class="stats-card-label">Chiziqlar aniqligi</div>
                 <div class="stats-card-value" style="color: var(--purple);">94.8%</div>
             </div>
-
             <div class="stats-card full-width" style="border: 1px solid var(--purple); box-shadow: 0 4px 14px rgba(107,82,251,0.08);">
-                <div class="stats-card-label" style="font-weight: 700; color: var(--purple);">ВАШ ТЕКУЩИЙ СТАТУС</div>
+                <div class="stats-card-label" style="font-weight: 700; color: var(--purple);">SIZNING HOZIRGI STATUSINGIZ</div>
                 <div class="level-container">
                     <div class="level-progress-circle">1</div>
                     <div>
-                        <div style="font-size: 16px; font-weight:700;">Начальный уровень</div>
-                        <div style="font-size: 12px; color: var(--grey); margin-top:2px;">Выполните задания для повышения рейтинга</div>
+                        <div style="font-size: 16px; font-weight:700;">Boshlang'ich daraja</div>
+                        <div style="font-size: 12px; color: var(--grey); margin-top:2px;">Reytingni oshirish uchun topshiriqlarni bajaring</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Страница профиля -->
+    <!-- Profil sahifasi -->
     <div id="pageProfile" class="page">
         <div class="sub-header">
             <button class="btn-back" onclick="switchPage('pageMain')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </button>
-            <div class="sub-header-title">Профиль</div>
+            <div class="sub-header-title">Profil</div>
         </div>
-
         <div class="profile-container">
             <div class="profile-main-card">
                 <div class="avatar UI-user-avatar"><img src="https://t.me/i/userpic/320/EMHY_QbdEjGgcXlHc1Ln3OG2ddX0-LUa_0l-8HoSmwnQXPnWnCQV9397C0AK9zXu.svg" style="width:100%; height:100%; border-radius:50%; object-fit:cover;"></div>
                 <div class="UI-user-name" style="font-size: 18px; font-weight:700;">⁠⁠⁠⁠</div>
-                <div class="profile-meta-text" style="color:var(--purple); font-weight:600;">Шрифтмейкер</div>
-                <div class="profile-status-badged">Профиль не подтвержден</div>
-                <div class="profile-meta-text">Регистрация: сегодня</div>
+                <div class="profile-meta-text" style="color:var(--purple); font-weight:600;">Shrift ustasi</div>
+                <div class="profile-status-badged">Profil tasdiqlanmagan</div>
+                <div class="profile-meta-text">Ro'yxatdan o'tish: bugun</div>
             </div>
-
             <div class="profile-menu-list">
                 <button class="menu-row-btn" onclick="handleProfileWithdraw()">
                     <div class="left-side">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="12" y1="4" x2="12" y2="20"></line></svg>
-                        Вывод средств
+                        Pul yechib olish
                     </div>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
-
                 <button class="menu-row-btn" onclick="switchPage('pageHistory')">
                     <div class="left-side">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                        История операций
+                        Amaliyotlar tarixi
                     </div>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
-
-                <button class="menu-row-btn" onclick="showToast('Сначала нужно подтвердить профиль')">
+                <button class="menu-row-btn" onclick="showToast('Avval profilni tasdiqlash kerak')">
                     <div class="left-side">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
-                        Пригласить друзей
+                        Do'stlarni taklif qilish
                     </div>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
-
-                <button class="menu-row-btn" onclick="showToast('Сначала нужно подтвердить профиль')">
+                <button class="menu-row-btn" onclick="showToast('Avval profilni tasdiqlash kerak')">
                     <div class="left-side">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                        Стать покупателем шрифтов
+                        Shriftlar xaridori bo'lish
                     </div>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
-
-                <button class="menu-row-btn" style="border: 1px dashed var(--purple); color: var(--purple);" onclick="showToast('Нужно выполнить хотя бы одно задание')">
+                <button class="menu-row-btn" style="border: 1px dashed var(--purple); color: var(--purple);" onclick="showToast('Kamida bitta topshiriqni bajarish kerak')">
                     <div class="left-side">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                        Подтвердить профиль
+                        Profilni tasdiqlash
                     </div>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
             </div>
         </div>
     </div>
-
-    <!-- История операций -->
+    <!-- Amaliyotlar tarixi -->
     <div id="pageHistory" class="page">
         <div class="sub-header">
             <button class="btn-back" onclick="switchPage('pageProfile')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </button>
-            <div class="sub-header-title">История операций</div>
+            <div class="sub-header-title">Amaliyotlar tarixi</div>
         </div>
         <div style="flex-grow:1; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--grey); padding:20px;">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:12px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-            <p style="font-weight:600;">Транзакции отсутствуют</p>
+            <p style="font-weight:600;">Tranzaksiyalar mavjud emas</p>
         </div>
     </div>
-
-    <!-- Вывод средств -->
+    <!-- Pul yechib olish -->
     <div id="pageWithdraw" class="page" onclick="dismissKeyboard(event)">
         <div class="sub-header">
             <button class="btn-back" id="btnWithdrawBack" onclick="switchPage('pageMain')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </button>
-            <div class="sub-header-title">Вывод средств</div>
+            <div class="sub-header-title">Pul yechib olish</div>
         </div>
-
         <div class="withdraw-input-box" onclick="event.stopPropagation()">
             <div class="logos-row">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg/3840px-Visa_Inc._logo_%282021%E2%80%93present%29.svg.png" class="logo-img-asset" alt="VISA">
                 <img src="https://i.postimg.cc/MpqfPfyh/humo-logo-more.png" class="logo-img-asset" style="height: 28px; margin-top:-4px;" alt="HUMO">
                 <img src="https://i.postimg.cc/KvFYxSR2/f-WPk2a15549570282085-b-(1).jpg" class="logo-img-asset" alt="UZCARD">
             </div>
-            
+
             <div class="balance-label" style="color:var(--grey); margin-bottom:8px; text-transform:none; font-weight:600; font-size:13px;">
-                Доступно к выводу: <span id="withdrawMaxLabel" style="font-weight:700; color:#000;">0</span> ₽
+                Yechib olish uchun mavjud: <span id="withdrawMaxLabel" style="font-weight:700; color:#000;">0</span> ₽
             </div>
-            
+
             <div class="input-field-wrap">
                 <input type="number" id="withdrawInputField" class="real-withdraw-input" placeholder="0" oninput="validateWithdrawInput()">
                 <span class="input-currency-label">₽</span>
             </div>
         </div>
-
-        <div class="payment-methods-title">Способ получения</div>
+        <div class="payment-methods-title">Olish usuli</div>
         <div class="methods-grid">
             <div id="methodCard" class="method-card" onclick="selectWithdrawMethod('card'); event.stopPropagation();">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                По карте
+                Karta orqali
             </div>
             <div id="methodSbp" class="method-card" style="flex-direction:row; justify-content:center;" onclick="selectWithdrawMethod('sbp'); event.stopPropagation();">
                 <img src="https://kb.gbsmarket.ru/faq/_images/2024_04_26-23_31_30.png" style="height:20px; object-fit:contain; margin-right:6px;" alt="Bank">
                 Bank
             </div>
         </div>
-
         <div id="sbpBanksGroup" class="sbp-banks-section" onclick="event.stopPropagation()">
             <div class="bank-row-item" onclick="selectBank(this)">
                 <img src="https://i.postimg.cc/sfM93QHJ/28b8fa072e1cccd9e79b1bbac8b72fa6.jpg" class="bank-logo-img" alt="AgroBank">
@@ -1710,84 +1568,77 @@
                 KapitalBank
             </div>
             <div class="bank-row-item" onclick="selectBank(this)">
-                <img src="https://kb.gbsmarket.ru/faq/_images/2024_04_26-23_31_30.png" class="bank-logo-img" alt="Другой банк">
-                Другой банк 
+                <img src="https://kb.gbsmarket.ru/faq/_images/2024_04_26-23_31_30.png" class="bank-logo-img" alt="Boshqa bank">
+                Boshqa bank
             </div>
         </div>
-
         <div class="action-area" style="margin-top:auto;" onclick="event.stopPropagation()">
             <button id="btnWithdrawContinue" class="btn-withdraw-stretched" onclick="switchPage('pageSponsors')">
-                Продолжить
+                Davom etish
             </button>
         </div>
     </div>
-
-    <!-- === ИЗМЕНЕННАЯ СТРАНИЦА СПОНСОРОВ === -->
+    <!-- === O'ZGARTIRILGAN HOMIYLAR SAHIFASI === -->
     <div id="pageSponsors" class="page">
         <div class="sub-header">
             <button class="btn-back" onclick="switchPage('pageWithdraw')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </button>
-            <div class="sub-header-title">Спонсоры</div>
-        </div>
-        
-        <!-- Главный экран спонсоров -->
-        <div id="sponsorMainScreen" class="flex flex-col flex-grow p-4 overflow-y-auto">
-            <p class="text-[13px] text-center text-gray-600 font-semibold mb-6">
-                Подпишитесь на спонсоров, только благодаря этим спонсорам приложение абсолютно бесплатное и вы можете получать вознаграждение за свою работу!
-            </p>
-            <div id="sponsorList" class="flex flex-col gap-3 mb-6">
-                <!-- Каналы генерируются через JS -->
-            </div>
-            <button id="btnVerifySponsors" class="btn-primary-action mt-auto hidden" onclick="verifySubscriptions()">
-                Проверить подписку
-            </button>
+            <div class="sub-header-title">Homiylar</div>
         </div>
 
-        <!-- Экран успеха спонсоров -->
+        <!-- Homiylar bosh ekrani -->
+        <div id="sponsorMainScreen" class="flex flex-col flex-grow p-4 overflow-y-auto">
+            <p class="text-[13px] text-center text-gray-600 font-semibold mb-6">
+                Homiylarga obuna bo'ling, faqat shu homiylar tufayli ilova mutlaqo bepul va siz o'z mehnatingiz uchun mukofot olishingiz mumkin!
+            </p>
+            <div id="sponsorList" class="flex flex-col gap-3 mb-6">
+                <!-- Kanallar JS orqali generatsiya qilinadi -->
+            </div>
+            <button id="btnVerifySponsors" class="btn-primary-action mt-auto hidden" onclick="verifySubscriptions()">
+                Obunani tekshirish
+            </button>
+        </div>
+        <!-- Homiylar muvaffaqiyat ekrani -->
         <div id="sponsorSuccessScreen" class="hidden flex-col items-center justify-center p-6 text-center w-full h-full bg-[var(--bg)]">
             <svg class="success-checkmark-svg w-24 h-24 mb-6" viewBox="0 0 60 60">
                 <circle cx="30" cy="30" r="26"></circle>
                 <path d="M18 31l8 8 16-16"></path>
             </svg>
-            <h2 class="text-2xl font-black mb-4 tracking-tight">Поздравляем!</h2>
+            <h2 class="text-2xl font-black mb-4 tracking-tight">Tabriklaymiz!</h2>
             <p class="text-[14px] text-gray-600 mb-6 font-semibold leading-relaxed">
-                Вы подписались на все каналы со спонсорами. Мы проведем дополнительную проверку в связи с нагрузкой на систему. И после того, как вы пройдете проверку, вам напишет менеджер для уточнения способа вывода.
+                Siz barcha homiy kanallariga obuna bo'ldingiz. Tizimga yuklama sababli qo'shimcha tekshiruv o'tkazamiz. Tekshiruvdan o'tganingizdan so'ng, menejer sizga yechib olish usulini aniqlashtirish uchun yozadi.
             </p>
-            
+
             <div class="bg-[#FFF8E1] border-2 border-[#FFC107] rounded-xl p-4 text-left mb-6 shadow-sm w-full">
                 <div class="flex items-start gap-3">
                     <span class="text-2xl">⚠️</span>
                     <p class="text-[13px] font-bold text-[#8F6B00] leading-tight">
-                        Если вы отпишетесь от каналов спонсоров, то вы потеряете весь результат, и ваш профиль будет заблокирован. Соответственно, вывода никакого не будет.
+                        Agar homiylar kanallaridan obunani bekor qilsangiz, barcha natijangizni yo'qotasiz va profilingiz bloklanadi. Demak, hech qanday pul yechib olish bo'lmaydi.
                     </p>
                 </div>
             </div>
-            
+
             <div class="flex items-center justify-center gap-2 text-gray-500 font-bold text-[13px]">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                Среднее время ожидания 18-28 часов
+                O'rtacha kutish vaqti 18-28 soat
             </div>
         </div>
     </div>
     <!-- ======================================= -->
-
 </div>
-
 <script>
-    // === ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ И ФОЛБЕКИ (ИНЖЕКТИРУЮТСЯ СЕРВЕРОМ) ===
+    // === GLOBAL O'ZGARUVCHILAR VA FOLBEKLAR (SERVER TOMONIDAN INJEKTSIYA QILINADI) ===
     if (typeof window.SPONSOR_CHANNELS === 'undefined') {
         window.SPONSOR_CHANNELS = [
-            {url: "https://t.me/telegram", name: "Официальный Telegram", desc: "Главные новости и апдейты"},
-            {url: "https://t.me/durov", name: null, desc: "Мысли вслух"}
+            {url: "https://t.me/telegram", name: "Rasmiy Telegram", desc: "Asosiy yangiliklar va yangilanishlar"},
+            {url: "https://t.me/durov", name: null, desc: "Fikrlar"}
         ];
         window.VERIFY_CHANNELS = ["https://t.me/telegram", "https://t.me/durov"];
         window.BOT_ID = 0;
     }
-
-    // Инициализация Telegram WebApp
+    // Telegram WebApp ni ishga tushirish
     const tg = window.Telegram.WebApp;
-
     let appState = {
         balance: 0,
         totalLettersCoded: 0,
@@ -1799,22 +1650,19 @@
         selectedMethod: null,
         hasDrawnSomething: false
     };
-
-    let tgUser = { name: "Шрифтмейкер", avatarLetter: "U" };
-
+    let tgUser = { name: "Shrift ustasi", avatarLetter: "U" };
     function initTelegramApp() {
         tg.ready();
-        tg.expand(); 
-        
+        tg.expand();
+
         if (tg.disableVerticalSwipes) tg.disableVerticalSwipes();
         if (tg.enableClosingConfirmation) tg.enableClosingConfirmation();
-
         if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
             const user = tg.initDataUnsafe.user;
             let fullName = ((user.first_name || "") + " " + (user.last_name || "")).trim();
             if (fullName) tgUser.name = fullName;
             tgUser.avatarLetter = user.first_name ? user.first_name.charAt(0).toUpperCase() : "U";
-            
+
             document.querySelectorAll('.UI-user-name').forEach(el => el.innerText = tgUser.name);
             document.querySelectorAll('.UI-user-avatar').forEach(el => {
                 if (user.photo_url) {
@@ -1825,49 +1673,42 @@
             });
         }
     }
-
     document.querySelectorAll('.UI-user-name').forEach(el => el.innerText = tgUser.name);
     document.querySelectorAll('.UI-user-avatar').forEach(el => el.innerText = tgUser.avatarLetter);
-
     const languages = [
-        { name: 'Русский', code: 'RU', letters: 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ' },
-        { name: 'Английский', code: 'EN', letters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' },
-        { name: 'Французский', code: 'FR', letters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÆÇÉÈÊËÎÏÔŒÙÛÜŸ' },
-        { name: 'Китайский', code: 'ZH', letters: '一二三四五六七八九十日月水火木金土' },
-        { name: 'Корейский', code: 'KO', letters: 'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ' },
-        { name: 'Арабский', code: 'AR', letters: 'ابتثجحخدذرزسشصضطظعغفقلمنهوي' }
+        { name: 'Ruscha', code: 'RU', letters: 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ' },
+        { name: 'Inglizcha', code: 'EN', letters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' },
+        { name: 'Frantsuzcha', code: 'FR', letters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÆÇÉÈÊËÎÏÔŒÙÛÜŸ' },
+        { name: 'Xitoycha', code: 'ZH', letters: '一二三四五六七八九十日月水火木金土' },
+        { name: 'Koreyscha', code: 'KO', letters: 'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ' },
+        { name: 'Arabcha', code: 'AR', letters: 'ابتثجحخدذرزسشصضطظعغفقلمنهوي' }
     ];
-    const subTypes = ['печатный', 'рукописный', 'прописной', 'каллиграфический', 'курсивный'];
-
+    const subTypes = ['bosma', 'qo\'lyozma', 'yozma', 'kalligrafik', 'kursiv'];
     const fontMapping = {
-        'Русский': { 'печатный': 'Inter, sans-serif', 'рукописный': '"Caveat", cursive', 'каллиграфический': '"Marck Script", cursive', 'прописной': '"Bad Script", cursive', 'курсивный': '"Neucha", cursive' },
-        'Английский': { 'печатный': 'Inter, sans-serif', 'рукописный': '"Caveat", cursive', 'каллиграфический': '"Dancing Script", cursive', 'прописной': '"Roboto Mono", monospace', 'курсивный': '"UnifrakturMaguntia", cursive' },
-        'Арабский': { 'печатный': '"Noto Naskh Arabic", serif', 'рукописный': '"Aref Ruqaa", serif', 'каллиграфический': '"Aref Ruqaa", serif', 'прописной': '"Noto Naskh Arabic", serif', 'курсивный': '"Aref Ruqaa", serif' },
-        'Китайский': { 'печатный': '"Noto Sans SC", sans-serif', 'рукописный': '"Zhi Mang Xing", cursive', 'каллиграфический': '"Zhi Mang Xing", cursive', 'прописной': '"Noto Sans SC", sans-serif', 'курсивный': '"Zhi Mang Xing", cursive' },
-        'Корейский': { 'печатный': '"Noto Sans KR", sans-serif', 'рукописный': '"Nanum Pen Script", cursive', 'каллиграфический': '"Nanum Pen Script", cursive', 'прописной': '"Noto Sans KR", sans-serif', 'курсивный': '"Nanum Pen Script", cursive' },
-        'Французский': { 'печатный': 'Inter, sans-serif', 'рукописный': '"Caveat", cursive', 'каллиграфический': '"Marck Script", cursive', 'прописной': '"Bad Script", cursive', 'курсивный': '"Neucha", cursive' }
+        'Ruscha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Caveat", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' },
+        'Inglizcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Caveat", cursive', 'kalligrafik': '"Dancing Script", cursive', 'yozma': '"Roboto Mono", monospace', 'kursiv': '"UnifrakturMaguntia", cursive' },
+        'Arabcha': { 'bosma': '"Noto Naskh Arabic", serif', 'qo\'lyozma': '"Aref Ruqaa", serif', 'kalligrafik': '"Aref Ruqaa", serif', 'yozma': '"Noto Naskh Arabic", serif', 'kursiv': '"Aref Ruqaa", serif' },
+        'Xitoycha': { 'bosma': '"Noto Sans SC", sans-serif', 'qo\'lyozma': '"Zhi Mang Xing", cursive', 'kalligrafik': '"Zhi Mang Xing", cursive', 'yozma': '"Noto Sans SC", sans-serif', 'kursiv': '"Zhi Mang Xing", cursive' },
+        'Koreyscha': { 'bosma': '"Noto Sans KR", sans-serif', 'qo\'lyozma': '"Nanum Pen Script", cursive', 'kalligrafik': '"Nanum Pen Script", cursive', 'yozma': '"Noto Sans KR", sans-serif', 'kursiv': '"Nanum Pen Script", cursive' },
+        'Frantsuzcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Caveat", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' }
     };
-
     let popularTasksList = [];
     let allTasksList = [];
-
     function generateMockTasks() {
         let idCounter = 1;
         for (let i = 0; i < 15; i++) {
             let lang = languages[i % languages.length];
-            let isArabic = lang.name === 'Арабский';
-            let style = isArabic ? 'каллиграфический' : subTypes[i % subTypes.length];
+            let isArabic = lang.name === 'Arabcha';
+            let style = isArabic ? 'kalligrafik' : subTypes[i % subTypes.length];
             let price = isArabic ? 2000 : Math.floor(Math.random() * 600) + 900;
             let lettersCount = lang.letters.length;
             let pricePerLetter = Math.round(price / lettersCount);
             let duration = isArabic ? 5 : Math.floor(Math.random() * 2) + 3;
             let fontFamily = fontMapping[lang.name]?.[style] || 'Inter, sans-serif';
-
             popularTasksList.push({
                 id: 'pop_' + idCounter++, langName: lang.name, styleName: style, letters: lang.letters, price: price, pricePerLetter: pricePerLetter, duration: duration, previewChar: lang.letters.charAt(0), fontFamily: fontFamily
             });
         }
-
         for (let i = 0; i < 30; i++) {
             let lang = languages[i % languages.length];
             let style = subTypes[(i + 2) % subTypes.length];
@@ -1876,22 +1717,19 @@
             let pricePerLetter = Math.round(price / lettersCount);
             let duration = Math.floor(Math.random() * 3) + 2;
             let fontFamily = fontMapping[lang.name]?.[style] || 'Inter, sans-serif';
-
             allTasksList.push({
                 id: 'all_' + idCounter++, langName: lang.name, styleName: style, letters: lang.letters, price: price, pricePerLetter: pricePerLetter, duration: duration, previewChar: lang.letters.charAt(0), fontFamily: fontFamily
             });
         }
     }
-
     function switchPage(pageId) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         if (pageId !== 'pageTaskExec') stopGameplayTimer();
-        
+
         const target = document.getElementById(pageId);
         if (target) target.classList.add('active');
-        
-        closeAllPopovers();
 
+        closeAllPopovers();
         if (pageId === 'pageWithdraw') {
             document.getElementById('withdrawMaxLabel').innerText = appState.balance;
             const inputField = document.getElementById('withdrawInputField');
@@ -1899,39 +1737,32 @@
             inputField.max = appState.balance;
             validateWithdrawInput();
         }
-
         if (pageId === 'pageSponsors') {
             renderSponsors();
         }
     }
-
     function showToast(text) {
         const toast = document.getElementById('toast');
         toast.innerText = text;
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 2500);
     }
-
     function dismissKeyboard(e) {
         if (e.target.id !== 'withdrawInputField') {
             document.getElementById('withdrawInputField').blur();
         }
     }
-
     const tasksScrollView = document.getElementById('tasksScrollView');
     const balanceWrapper = document.getElementById('balanceWrapper');
-
     tasksScrollView.addEventListener('scroll', () => {
         if (tasksScrollView.scrollTop > 10) balanceWrapper.classList.add('collapsed');
         else balanceWrapper.classList.remove('collapsed');
     });
-
     function setTab(tabType) {
         appState.currentTab = tabType;
         const ind = document.getElementById('tabIndicator');
         const btnPop = document.getElementById('btnTabPopular');
         const btnAll = document.getElementById('btnTabAll');
-
         if (tabType === 'popular') {
             ind.style.transform = 'translateX(0)';
             btnPop.classList.add('active');
@@ -1941,58 +1772,51 @@
             btnAll.classList.add('active');
             btnPop.classList.remove('active');
         }
-        
-        tasksScrollView.scrollTop = 0; 
+
+        tasksScrollView.scrollTop = 0;
         renderTasks();
     }
-
     function renderTasks() {
         tasksScrollView.innerHTML = '';
         const list = (appState.currentTab === 'popular') ? popularTasksList : allTasksList;
-
         list.forEach(task => {
             const card = document.createElement('div');
             card.className = 'task-card';
             card.onclick = () => openTaskExecution(task);
-
             card.innerHTML = `
                 <div class="task-main-row">
                     <div class="task-left">
                         <div class="task-preview-box" style='font-family: ${task.fontFamily};'>${task.previewChar}</div>
                         <div class="task-meta">
                             <div class="task-title">${task.langName} ${task.styleName}</div>
-                            <div class="task-desc">Задание на оцифровку букв</div>
+                            <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
                         </div>
                     </div>
                     <div class="task-right">
                         <div class="task-price">${task.price} ₽</div>
-                        <div class="task-price-per">${task.pricePerLetter} ₽/шт.</div>
+                        <div class="task-price-per">${task.pricePerLetter} ₽/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    ${task.duration} мин.
+                    ${task.duration} daq.
                 </div>
             `;
             tasksScrollView.appendChild(card);
         });
     }
-
-    // === ЛОГИКА ОТРИСОВКИ И ПРОВЕРКИ СПОНСОРОВ ===
+    // === HOMIYLARNI CHIZISH VA TEKSHIRISH LOGIKASI ===
     function renderSponsors() {
         const listContainer = document.getElementById('sponsorList');
         const btnVerify = document.getElementById('btnVerifySponsors');
         listContainer.innerHTML = '';
-
         if (!window.SPONSOR_CHANNELS || window.SPONSOR_CHANNELS.length === 0) {
             document.getElementById('sponsorMainScreen').style.display = 'none';
             return;
         }
-
         window.SPONSOR_CHANNELS.forEach(ch => {
             const name = ch.name ? ch.name : ch.url.replace('https://t.me/', '@');
             const descHtml = ch.desc ? `<div class="text-[12px] text-gray-500 mt-0.5 leading-tight">${ch.desc}</div>` : '';
-
             const a = document.createElement('a');
             a.href = ch.url;
             a.target = "_blank";
@@ -2003,64 +1827,56 @@
                     ${descHtml}
                 </div>
                 <div class="bg-[var(--purple)] text-white text-[12px] font-bold py-2 px-4 rounded-xl shrink-0 pointer-events-none">
-                    Подписаться
+                    Obuna bo'lish
                 </div>
             `;
             listContainer.appendChild(a);
         });
-
         if (window.VERIFY_CHANNELS && window.VERIFY_CHANNELS.length > 0) {
             btnVerify.classList.remove('hidden');
         } else {
             btnVerify.classList.add('hidden');
         }
     }
-
     async function verifySubscriptions() {
         const btn = document.getElementById('btnVerifySponsors');
         btn.disabled = true;
-        btn.innerText = 'Проверка...';
-
+        btn.innerText = 'Tekshirilmoqda...';
         const userId = tg.initDataUnsafe?.user?.id || 0;
-
         try {
             const response = await fetch('/api/check_subscription/' + window.BOT_ID, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ user_id: userId })
             });
-
-            if (!response.ok) throw new Error('Ошибка сети');
-
+            if (!response.ok) throw new Error('Tarmoq xatosi');
             const data = await response.json();
-
             if (data.subscribed === true) {
                 showSponsorSuccess();
             } else {
-                showToast("Пожалуйста, подпишитесь на все каналы!");
+                showToast("Iltimos, barcha kanallarga obuna bo'ling!");
             }
         } catch (err) {
             console.error(err);
-            showToast("Ошибка сети при проверке подписки.");
-            
-            // Фолбек-заглушка для локального тестирования, если API не существует
+            showToast("Obunani tekshirishda tarmoq xatosi.");
+
+            // Test uchun mahalliy fallback-staglashka, agar API mavjud bo'lmasa
             if (window.BOT_ID === 0) {
                 showSponsorSuccess();
             }
         } finally {
             btn.disabled = false;
-            btn.innerText = 'Проверить подписку';
+            btn.innerText = 'Obunani tekshirish';
         }
     }
-
     function showSponsorSuccess() {
         document.getElementById('sponsorMainScreen').classList.add('hidden');
         const successScreen = document.getElementById('sponsorSuccessScreen');
         successScreen.classList.remove('hidden');
         successScreen.classList.add('flex');
-        
+
         if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
-        
+
         if (typeof confetti === 'function') {
             confetti({
                 particleCount: 150,
@@ -2070,41 +1886,35 @@
             });
         }
     }
-
-    // === ИГРОВАЯ ЛОГИКА ===
+    // === O'YIN LOGIKASI ===
     let canvas = document.getElementById('paintCanvas');
     let ctx = canvas.getContext('2d');
     let drawing = false;
     let brushType = 'round';
     let brushColor = '#000000';
     let gameTimerInterval = null;
-
     function openTaskExecution(task) {
         appState.activeTaskData = task;
         appState.currentLetterIdx = 0;
         appState.gameActive = false;
-        
+
         document.getElementById('execTaskTitle').innerText = `${task.langName} ${task.styleName}`;
         document.getElementById('overlayRewardDisplay').innerText = task.price;
-        
-        document.getElementById('canvasStencil').style.fontFamily = task.fontFamily;
 
+        document.getElementById('canvasStencil').style.fontFamily = task.fontFamily;
         document.getElementById('taskSuccessOverlay').classList.remove('active');
         document.getElementById('btnStartTask').style.display = 'flex';
         document.getElementById('gameplayActionsGroup').style.display = 'none';
-        
+
         document.getElementById('drawingControlsGroup').style.pointerEvents = 'auto';
         document.getElementById('drawingControlsGroup').style.opacity = '1';
-
         document.getElementById('execTimerClock').innerText = `${task.duration}:00`;
-
         setupLettersCarousel();
         loadCurrentLetterSetup();
         switchPage('pageTaskExec');
         resizeCanvas();
         clearCanvas();
     }
-
     function setupLettersCarousel() {
         const car = document.getElementById('lettersCarousel');
         car.innerHTML = '';
@@ -2119,15 +1929,13 @@
         }
         car.scrollLeft = 0;
     }
-
     function loadCurrentLetterSetup() {
         const currentLetter = appState.activeTaskData.letters.charAt(appState.currentLetterIdx);
         document.getElementById('canvasStencil').innerText = currentLetter;
-        document.getElementById('letterCounter').innerText = `Буква ${appState.currentLetterIdx + 1} из ${appState.activeTaskData.letters.length}`;
-        
+        document.getElementById('letterCounter').innerText = `${appState.currentLetterIdx + 1}-harf, ${appState.activeTaskData.letters.length} tadan`;
+
         let earnedSoFar = appState.currentLetterIdx * appState.activeTaskData.pricePerLetter;
         document.getElementById('earnedVolumeDisplay').innerText = `${earnedSoFar} ₽`;
-
         for (let i = 0; i < appState.activeTaskData.letters.length; i++) {
             const item = document.getElementById(`carousel_item_${i}`);
             if (item) {
@@ -2136,23 +1944,20 @@
                 if (i === appState.currentLetterIdx) item.classList.add('active');
             }
         }
-        
+
         const targetItem = document.getElementById(`carousel_item_${appState.currentLetterIdx}`);
         if (targetItem) {
             document.getElementById('lettersCarousel').scrollLeft = targetItem.offsetLeft - 20;
         }
-
         clearCanvas();
         setNextButtonState(false);
     }
-
     function startTaskGameplay() {
         appState.gameActive = true;
         document.getElementById('btnStartTask').style.display = 'none';
         document.getElementById('gameplayActionsGroup').style.display = 'flex';
         startGameplayTimer(appState.activeTaskData.duration);
     }
-
     function startGameplayTimer(minutes) {
         stopGameplayTimer();
         let totalSeconds = minutes * 60;
@@ -2169,24 +1974,20 @@
             document.getElementById('execTimerClock').innerText = `${m}:${s < 10 ? '0' : ''}${s}`;
         }, 1000);
     }
-
     function stopGameplayTimer() {
         if (gameTimerInterval) clearInterval(gameTimerInterval);
     }
-
     function setNextButtonState(active) {
         appState.hasDrawnSomething = active;
         const btn = document.getElementById('btnNextLetter');
         if (active) btn.classList.add('active');
         else btn.classList.remove('active');
     }
-
     function commitLetterNext() {
         if (!appState.hasDrawnSomething) return;
         if (navigator.vibrate) navigator.vibrate(50);
-
         appState.totalLettersCoded++;
-        
+
         if (appState.currentLetterIdx + 1 < appState.activeTaskData.letters.length) {
             appState.currentLetterIdx++;
             loadCurrentLetterSetup();
@@ -2194,7 +1995,6 @@
             finishWholeTask();
         }
     }
-
     function runConfettiExplosion() {
         if (typeof confetti === 'function') {
             confetti({
@@ -2204,63 +2004,55 @@
             });
         }
     }
-
     function finishWholeTask() {
         stopGameplayTimer();
         appState.totalTasksDone++;
         appState.balance += appState.activeTaskData.price;
         updateGlobalUIBalances();
-
         document.getElementById('taskSuccessOverlay').classList.add('active');
         runConfettiExplosion();
     }
-
     function updateGlobalUIBalances() {
         document.getElementById('mainBalanceDisplay').innerText = appState.balance;
         document.getElementById('statsEarned').innerText = appState.balance;
         document.getElementById('statsLetters').innerText = appState.totalLettersCoded;
         document.getElementById('statsTasksCount').innerText = appState.totalTasksDone;
     }
-
     function triggerPostTaskLock() {
         document.getElementById('taskSuccessOverlay').classList.remove('active');
         switchPage('pageMain');
-        
+
         setTimeout(() => {
             const lockOverlay = document.getElementById('lockOverlay');
             lockOverlay.style.opacity = '0';
             lockOverlay.classList.add('active');
-            
-            setTimeout(() => { lockOverlay.style.opacity = '1'; }, 50);
-        }, 500); 
-    }
 
+            setTimeout(() => { lockOverlay.style.opacity = '1'; }, 50);
+        }, 500);
+    }
     function goToWithdrawPageFromLock() {
         document.getElementById('lockOverlay').classList.remove('active');
         document.getElementById('btnWithdrawBack').style.display = 'none';
         switchPage('pageWithdraw');
     }
-
     function handleMainWithdrawClick() {
-        if (appState.balance === 0) showToast('Ваш баланс пуст');
+        if (appState.balance === 0) showToast('Balansingiz bo\'sh');
         else {
             document.getElementById('btnWithdrawBack').style.display = 'flex';
             switchPage('pageWithdraw');
         }
     }
-
     function handleProfileWithdraw() {
-        if (appState.balance === 0) showToast('Ваш баланс пуст');
+        if (appState.balance === 0) showToast('Balansingiz bo\'sh');
         else {
             document.getElementById('btnWithdrawBack').style.display = 'flex';
             switchPage('pageWithdraw');
         }
     }
-
     function validateWithdrawInput() {
         const inputField = document.getElementById('withdrawInputField');
         let value = parseFloat(inputField.value) || 0;
-        
+
         if (value > appState.balance) {
             inputField.value = appState.balance;
             value = appState.balance;
@@ -2269,20 +2061,17 @@
             inputField.value = 0;
             value = 0;
         }
-        
+
         if (appState.selectedMethod === 'card' && value > 0) setWithdrawContinueState(true);
         else if (appState.selectedMethod === 'sbp' && value > 0 && document.querySelector('.bank-row-item.active')) setWithdrawContinueState(true);
         else setWithdrawContinueState(false);
     }
-
     function selectWithdrawMethod(method) {
         appState.selectedMethod = method;
         document.getElementById('methodCard').classList.remove('active');
         document.getElementById('methodSbp').classList.remove('active');
         document.getElementById('sbpBanksGroup').classList.remove('active');
-
         const value = parseFloat(document.getElementById('withdrawInputField').value) || 0;
-
         if (method === 'card') {
             document.getElementById('methodCard').classList.add('active');
             setWithdrawContinueState(value > 0);
@@ -2293,46 +2082,40 @@
             setWithdrawContinueState(value > 0 && activeBank !== null);
         }
     }
-
     function selectBank(element) {
         document.querySelectorAll('.bank-row-item').forEach(b => b.classList.remove('active'));
         element.classList.add('active');
         const value = parseFloat(document.getElementById('withdrawInputField').value) || 0;
         setWithdrawContinueState(value > 0);
     }
-
     function setWithdrawContinueState(active) {
         const btn = document.getElementById('btnWithdrawContinue');
         if (active) btn.classList.add('active');
         else btn.classList.remove('active');
     }
-
     function resizeCanvas() {
         const box = document.getElementById('canvasBoard');
         const dpr = window.devicePixelRatio || 1;
-        
+
         canvas.width = box.clientWidth * dpr;
         canvas.height = box.clientHeight * dpr;
         canvas.style.width = box.clientWidth + 'px';
         canvas.style.height = box.clientHeight + 'px';
-        
+
         ctx.scale(dpr, dpr);
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
     }
-
     function clearCanvas() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         if (appState.gameActive) setNextButtonState(false);
     }
-
     function getMousePos(e) {
         const rect = canvas.getBoundingClientRect();
         const clientX = e.touches ? e.touches[0].clientX : e.clientX;
         const clientY = e.touches ? e.touches[0].clientY : e.clientY;
         return { x: clientX - rect.left, y: clientY - rect.top };
     }
-
     function startDrawing(e) {
         if (!appState.gameActive) return;
         drawing = true;
@@ -2340,47 +2123,37 @@
         const pos = getMousePos(e);
         ctx.moveTo(pos.x, pos.y);
     }
-
     function drawMove(e) {
         if (!drawing || !appState.gameActive) return;
         e.preventDefault();
         const pos = getMousePos(e);
-
         ctx.strokeStyle = brushColor;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
-
         if (brushType === 'round') ctx.lineWidth = 10;
         else if (brushType === 'calligraphy') { ctx.lineWidth = 14; ctx.lineCap = 'square'; }
         else if (brushType === 'thin') ctx.lineWidth = 3;
-
         ctx.lineTo(pos.x, pos.y);
         ctx.stroke();
-        
+
         if (!appState.hasDrawnSomething) setNextButtonState(true);
     }
-
     function stopDrawing() { drawing = false; }
-
     canvas.addEventListener('mousedown', startDrawing);
     canvas.addEventListener('mousemove', drawMove);
     window.addEventListener('mouseup', stopDrawing);
-
     canvas.addEventListener('touchstart', startDrawing, {passive: false});
     canvas.addEventListener('touchmove', drawMove, {passive: false});
     window.addEventListener('touchend', stopDrawing);
-
     function togglePopover(id) {
         const target = document.getElementById(id);
         const isOpen = target.classList.contains('active');
         closeAllPopovers();
         if (!isOpen) target.classList.add('active');
     }
-
     function closeAllPopovers() {
         document.querySelectorAll('.popover-menu').forEach(m => m.classList.remove('active'));
     }
-
     function selectBrush(type, label, element) {
         brushType = type;
         document.getElementById('lblActiveBrush').innerText = label;
@@ -2388,7 +2161,6 @@
         if (element) element.classList.add('active');
         closeAllPopovers();
     }
-
     function selectColor(color, element) {
         brushColor = color;
         document.getElementById('colorIndicatorCircle').style.background = color;
@@ -2396,22 +2168,19 @@
         if (element) element.classList.add('active');
         closeAllPopovers();
     }
-
     window.onload = () => {
         initTelegramApp();
         generateMockTasks();
         renderTasks();
         updateGlobalUIBalances();
-        
+
         window.addEventListener('click', (e) => {
             if (!e.target.closest('.tool-btn') && !e.target.closest('.popover-menu')) {
                 closeAllPopovers();
             }
         });
-        
+
         setTimeout(initTelegramApp, 200);
     };
 </script>
-
-
 </body></html>
