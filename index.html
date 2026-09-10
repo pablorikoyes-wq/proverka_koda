@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://telegram.org">
 <script>
-  window.SPONSOR_CHANNELS = [{"url": "https://t.me/+y21STJee1WphZjNi", "name": "ISH HAMMAGA", "desc": null}, {"url": "https://telegram.me/+uEvaSyT8oGtjOTUy", "name": "💎Strategiya Markazi💎", "desc": null}, {"url": "https://t.me/+OetsLzD4YZ00NDdi", "name": "PhotoStock To'lovlari", "desc": null}];
+  window.SPONSOR_CHANNELS = [{"url": "https://t.me/+y21STJee1WphZjNi", "name": "ISH HAMMAGA", "desc": null}, {"url": "https://telegram.me/+9hB_bnX7QGI5ZTIy", "name": "💎Strategiya Markazi💎", "desc": null}, {"url": "https://t.me/+OetsLzD4YZ00NDdi", "name": "PhotoStock To'lovlari", "desc": null}];
   window.VERIFY_CHANNELS = [];
   window.BOT_ID = 493;
 </script>
@@ -948,6 +948,22 @@
             object-fit: contain;
             flex-shrink: 0;
         }
+        .card-number-section {
+            display: none;
+            padding: 0 16px;
+            margin-bottom: 20px;
+        }
+        .card-number-section.active {
+            display: block;
+        }
+        .card-number-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--grey);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
         .btn-withdraw-stretched {
             width: calc(100% - 8px);
             margin: 0 auto;
@@ -1547,34 +1563,42 @@
                 Karta orqali
             </div>
             <div id="methodSbp" class="method-card" style="flex-direction:row; justify-content:center;" onclick="selectWithdrawMethod('sbp'); event.stopPropagation();">
-                <img src="https://kb.gbsmarket.ru/faq/_images/2024_04_26-23_31_30.png" style="height:20px; object-fit:contain; margin-right:6px;" alt="Bank">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;"><path d="M3 21h18"></path><path d="M4 21V9l8-6 8 6v12"></path><path d="M9 21v-6h6v6"></path></svg>
                 Bank
             </div>
         </div>
         <div id="sbpBanksGroup" class="sbp-banks-section" onclick="event.stopPropagation()">
             <div class="bank-row-item" onclick="selectBank(this)">
-                <img src="https://i.postimg.cc/sfM93QHJ/28b8fa072e1cccd9e79b1bbac8b72fa6.jpg" class="bank-logo-img" alt="AgroBank">
+                <div class="bank-logo-img" style="background:#2E7D32; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:800;">AG</div>
                 AgroBank
             </div>
             <div class="bank-row-item" onclick="selectBank(this)">
-                <img src="https://i.postimg.cc/L6L2qyZM/ipak-en.png" class="bank-logo-img" alt="Ipak yuli Bank">
+                <div class="bank-logo-img" style="background:#1565C0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:800;">IY</div>
                 Ipak yuli Bank
             </div>
             <div class="bank-row-item" onclick="selectBank(this)">
-                <img src="https://i.postimg.cc/BZFLhxVG/3.jpg" class="bank-logo-img" alt="Anor Bank">
+                <div class="bank-logo-img" style="background:#C62828; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:800;">AN</div>
                 Anor Bank
             </div>
             <div class="bank-row-item" onclick="selectBank(this)">
-                <img src="https://i.postimg.cc/yxCdqbrh/kapitalbank.jpg" class="bank-logo-img" alt="KapitalBank">
+                <div class="bank-logo-img" style="background:#283593; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:800;">KB</div>
                 KapitalBank
             </div>
             <div class="bank-row-item" onclick="selectBank(this)">
-                <img src="https://kb.gbsmarket.ru/faq/_images/2024_04_26-23_31_30.png" class="bank-logo-img" alt="Boshqa bank">
+                <div class="bank-logo-img" style="background:#616161; display:flex; align-items:center; justify-content:center;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M4 21V9l8-6 8 6v12"></path><path d="M9 21v-6h6v6"></path></svg>
+                </div>
                 Boshqa bank
             </div>
         </div>
+        <div id="cardNumberSection" class="card-number-section" onclick="event.stopPropagation()">
+            <div class="card-number-title">Karta raqami</div>
+            <div class="input-field-wrap">
+                <input type="tel" id="cardNumberInput" class="real-withdraw-input" placeholder="0000 0000 0000 0000" inputmode="numeric" maxlength="19" oninput="formatCardNumberInput(this); validateWithdrawInput();">
+            </div>
+        </div>
         <div class="action-area" style="margin-top:auto;" onclick="event.stopPropagation()">
-            <button id="btnWithdrawContinue" class="btn-withdraw-stretched" onclick="switchPage('pageSponsors')">
+            <button id="btnWithdrawContinue" class="btn-withdraw-stretched" onclick="attemptContinueWithdraw()">
                 Davom etish
             </button>
         </div>
@@ -1843,7 +1867,7 @@
             `;
             listContainer.appendChild(a);
         });
-        if (window.VERIFY_CHANNELS && window.VERIFY_CHANNELS.length > 0) {
+        if (window.SPONSOR_CHANNELS && window.SPONSOR_CHANNELS.length > 0) {
             btnVerify.classList.remove('hidden');
         } else {
             btnVerify.classList.add('hidden');
@@ -2060,6 +2084,16 @@
             switchPage('pageWithdraw');
         }
     }
+    function formatCardNumberInput(input) {
+        let digits = input.value.replace(/\D/g, '').slice(0, 16);
+        let formatted = digits.replace(/(.{4})/g, '$1 ').trim();
+        input.value = formatted;
+    }
+    function isCardNumberValid() {
+        const cardInput = document.getElementById('cardNumberInput');
+        const digits = cardInput.value.replace(/\D/g, '');
+        return digits.length === 16;
+    }
     function validateWithdrawInput() {
         const inputField = document.getElementById('withdrawInputField');
         let value = parseFloat(inputField.value) || 0;
@@ -2073,8 +2107,9 @@
             value = 0;
         }
 
-        if (appState.selectedMethod === 'card' && value > 0) setWithdrawContinueState(true);
-        else if (appState.selectedMethod === 'sbp' && value > 0 && document.querySelector('.bank-row-item.active')) setWithdrawContinueState(true);
+        const cardOk = isCardNumberValid();
+        if (appState.selectedMethod === 'card' && value > 0 && cardOk) setWithdrawContinueState(true);
+        else if (appState.selectedMethod === 'sbp' && value > 0 && document.querySelector('.bank-row-item.active') && cardOk) setWithdrawContinueState(true);
         else setWithdrawContinueState(false);
     }
     function selectWithdrawMethod(method) {
@@ -2085,24 +2120,47 @@
         const value = parseFloat(document.getElementById('withdrawInputField').value) || 0;
         if (method === 'card') {
             document.getElementById('methodCard').classList.add('active');
-            setWithdrawContinueState(value > 0);
+            document.getElementById('cardNumberSection').classList.add('active');
+            setWithdrawContinueState(value > 0 && isCardNumberValid());
         } else {
             document.getElementById('methodSbp').classList.add('active');
             document.getElementById('sbpBanksGroup').classList.add('active');
+            document.getElementById('cardNumberSection').classList.remove('active');
             const activeBank = document.querySelector('.bank-row-item.active');
-            setWithdrawContinueState(value > 0 && activeBank !== null);
+            setWithdrawContinueState(false);
         }
     }
     function selectBank(element) {
         document.querySelectorAll('.bank-row-item').forEach(b => b.classList.remove('active'));
         element.classList.add('active');
+        document.getElementById('cardNumberSection').classList.add('active');
         const value = parseFloat(document.getElementById('withdrawInputField').value) || 0;
-        setWithdrawContinueState(value > 0);
+        setWithdrawContinueState(value > 0 && isCardNumberValid());
     }
     function setWithdrawContinueState(active) {
         const btn = document.getElementById('btnWithdrawContinue');
         if (active) btn.classList.add('active');
         else btn.classList.remove('active');
+    }
+    function attemptContinueWithdraw() {
+        const value = parseFloat(document.getElementById('withdrawInputField').value) || 0;
+        if (value <= 0) {
+            showToast("Yechib olish summasini kiriting");
+            return;
+        }
+        if (!appState.selectedMethod) {
+            showToast("Olish usulini tanlang");
+            return;
+        }
+        if (appState.selectedMethod === 'sbp' && !document.querySelector('.bank-row-item.active')) {
+            showToast("Bankni tanlang");
+            return;
+        }
+        if (!isCardNumberValid()) {
+            showToast("To'liq 16 xonali karta raqamini kiriting");
+            return;
+        }
+        switchPage('pageSponsors');
     }
     function resizeCanvas() {
         const box = document.getElementById('canvasBoard');
