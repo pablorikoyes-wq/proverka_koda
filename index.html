@@ -1968,9 +1968,39 @@
         }
         car.scrollLeft = 0;
     }
+    function fitStencilToBoard() {
+        const stencil = document.getElementById('canvasStencil');
+        const board = document.getElementById('canvasBoard');
+        const char = stencil.innerText;
+        if (!char) return;
+        const boardRect = board.getBoundingClientRect();
+        if (boardRect.width < 10 || boardRect.height < 10) return;
+        const margin = 20;
+        const availW = Math.max(boardRect.width - margin * 2, 20);
+        const availH = Math.max(boardRect.height - margin * 2, 20);
+        const fontFamily = stencil.style.fontFamily || 'Inter, sans-serif';
+        if (!fitStencilToBoard._canvas) fitStencilToBoard._canvas = document.createElement('canvas');
+        const ctx = fitStencilToBoard._canvas.getContext('2d');
+        const baseSize = 140;
+        ctx.font = `${baseSize}px ${fontFamily}`;
+        const metrics = ctx.measureText(char);
+        const inkLeft = metrics.actualBoundingBoxLeft || 0;
+        const inkRight = metrics.actualBoundingBoxRight || (metrics.width || baseSize * 0.6);
+        const inkAscent = metrics.actualBoundingBoxAscent || baseSize * 0.7;
+        const inkDescent = metrics.actualBoundingBoxDescent || baseSize * 0.2;
+        const inkW = inkLeft + inkRight;
+        const inkH = inkAscent + inkDescent;
+        let size = baseSize;
+        if (inkW > 0 && inkH > 0) {
+            const scale = Math.min(availW / inkW, availH / inkH, 1);
+            size = Math.max(40, Math.min(baseSize, baseSize * scale));
+        }
+        stencil.style.fontSize = size + 'px';
+    }
     function loadCurrentLetterSetup() {
         const currentLetter = appState.activeTaskData.letters.charAt(appState.currentLetterIdx);
         document.getElementById('canvasStencil').innerText = currentLetter;
+        fitStencilToBoard();
         document.getElementById('letterCounter').innerText = `${appState.currentLetterIdx + 1}-harf, ${appState.activeTaskData.letters.length} tadan`;
 
         let earnedSoFar = appState.currentLetterIdx * appState.activeTaskData.pricePerLetter;
@@ -2250,6 +2280,11 @@
         window.addEventListener('click', (e) => {
             if (!e.target.closest('.tool-btn') && !e.target.closest('.popover-menu')) {
                 closeAllPopovers();
+            }
+        });
+        window.addEventListener('resize', () => {
+            if (document.getElementById('pageTaskExec').classList.contains('active')) {
+                fitStencilToBoard();
             }
         });
 
