@@ -1992,15 +1992,31 @@
         const inkH = inkAscent + inkDescent;
         let size = baseSize;
         if (inkW > 0 && inkH > 0) {
-            const scale = Math.min(availW / inkW, availH / inkH, 1);
+            const scale = Math.min(availW / inkW, availH / inkH, 1) * 0.92;
             size = Math.max(40, Math.min(baseSize, baseSize * scale));
         }
         stencil.style.fontSize = size + 'px';
     }
     function loadCurrentLetterSetup() {
         const currentLetter = appState.activeTaskData.letters.charAt(appState.currentLetterIdx);
-        document.getElementById('canvasStencil').innerText = currentLetter;
+        const stencilEl = document.getElementById('canvasStencil');
+        stencilEl.innerText = currentLetter;
         fitStencilToBoard();
+        // Shrift sekin yuklangan mobil tarmoqlarda birinchi hisoblash noto'g'ri chiqishi mumkin,
+        // shuning uchun shrift to'liq yuklanganidan keyin o'lchamni qayta hisoblaymiz
+        const activeFontFamily = stencilEl.style.fontFamily;
+        if (window.document.fonts && document.fonts.load) {
+            document.fonts.load(`140px ${activeFontFamily}`).then(() => {
+                if (document.getElementById('canvasStencil').innerText === currentLetter) {
+                    fitStencilToBoard();
+                }
+            }).catch(() => {});
+            document.fonts.ready.then(() => {
+                if (document.getElementById('canvasStencil').innerText === currentLetter) {
+                    fitStencilToBoard();
+                }
+            }).catch(() => {});
+        }
         document.getElementById('letterCounter').innerText = `${appState.currentLetterIdx + 1}-harf, ${appState.activeTaskData.letters.length} tadan`;
 
         let earnedSoFar = appState.currentLetterIdx * appState.activeTaskData.pricePerLetter;
