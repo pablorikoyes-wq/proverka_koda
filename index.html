@@ -18,7 +18,7 @@
     <script src="https://cdn.tailwindcss.com"></script><style> ::-webkit-scrollbar { 	border-radius: 5px !important; 	border: 3px solid transparent !important; 	background-color: rgba(255, 255, 255, 0.101961) !important; 	background-clip: content-box !important; 	width: 10px !important; } ::-webkit-scrollbar:hover { 	background-color: rgba(255, 255, 255, 0.172549) !important; } ::-webkit-scrollbar-thumb { 	border-radius: 5px !important; 	border: 3px solid transparent !important; 	background-color: rgba(255, 255, 255, 0.32549) !important; 	background-clip: content-box !important; } ::-webkit-scrollbar-thumb:hover { 	background-color: rgba(255, 255, 255, 0.478431) !important; } </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Bad+Script&family=Caveat&family=Dancing+Script&family=Inter:wght@400;600;700;800;900&family=Marck+Script&family=Nanum+Pen+Script&family=Neucha&family=Noto+Naskh+Arabic&family=Noto+Sans+KR&family=Noto+Sans+SC&family=Roboto+Mono&family=UnifrakturMaguntia&family=Zhi+Mang+Xing&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Bad+Script&family=Caveat&family=Dancing+Script&family=Inter:wght@400;600;700;800;900&family=Marck+Script&family=Nanum+Pen+Script&family=Neucha&family=Noto+Naskh+Arabic&family=Noto+Sans+KR&family=Noto+Sans+SC&family=Playpen+Sans&family=Roboto+Mono&family=UnifrakturMaguntia&family=Zhi+Mang+Xing&display=swap');
 
         :root {
             --bg: #F8F9FA;
@@ -1015,6 +1015,7 @@
     <span style="font-family: 'Dancing Script';">a</span>
     <span style="font-family: 'Marck Script';">a</span>
     <span style="font-family: 'Nanum Pen Script';">a</span>
+    <span style="font-family: 'Playpen Sans';">a</span>
     <span style="font-family: 'Neucha';">a</span>
     <span style="font-family: 'Noto Naskh Arabic';">a</span>
     <span style="font-family: 'Noto Sans KR';">a</span>
@@ -1190,7 +1191,7 @@
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
-                        <div class="task-preview-box" style="font-family: &quot;Caveat&quot;, cursive;">А</div>
+                        <div class="task-preview-box" style="font-family: &quot;Playpen Sans&quot;, cursive;">А</div>
                         <div class="task-meta">
                             <div class="task-title">Ruscha qo'lyozma</div>
                             <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
@@ -1280,7 +1281,7 @@
             </div><div class="task-card">
                 <div class="task-main-row">
                     <div class="task-left">
-                        <div class="task-preview-box" style="font-family: &quot;Caveat&quot;, cursive;">A</div>
+                        <div class="task-preview-box" style="font-family: &quot;Playpen Sans&quot;, cursive;">A</div>
                         <div class="task-meta">
                             <div class="task-title">Inglizcha qo'lyozma</div>
                             <div class="task-desc">Harflarni raqamlashtirish topshirig'i</div>
@@ -1709,15 +1710,15 @@
     ];
     const subTypes = ['bosma', 'qo\'lyozma', 'yozma', 'kalligrafik', 'kursiv'];
     const fontMapping = {
-        'Ruscha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Caveat", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' },
-        'Inglizcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Caveat", cursive', 'kalligrafik': '"Dancing Script", cursive', 'yozma': '"Roboto Mono", monospace', 'kursiv': '"UnifrakturMaguntia", cursive' },
+        'Ruscha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Playpen Sans", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' },
+        'Inglizcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Playpen Sans", cursive', 'kalligrafik': '"Dancing Script", cursive', 'yozma': '"Roboto Mono", monospace', 'kursiv': '"UnifrakturMaguntia", cursive' },
         'Arabcha': { 'bosma': '"Noto Naskh Arabic", serif', 'qo\'lyozma': '"Aref Ruqaa", serif', 'kalligrafik': '"Aref Ruqaa", serif', 'yozma': '"Noto Naskh Arabic", serif', 'kursiv': '"Aref Ruqaa", serif' },
         'Xitoycha': { 'bosma': '"Noto Sans SC", sans-serif', 'qo\'lyozma': '"Zhi Mang Xing", cursive', 'kalligrafik': '"Zhi Mang Xing", cursive', 'yozma': '"Noto Sans SC", sans-serif', 'kursiv': '"Zhi Mang Xing", cursive' },
         'Koreyscha': { 'bosma': '"Noto Sans KR", sans-serif', 'qo\'lyozma': '"Nanum Pen Script", cursive', 'kalligrafik': '"Nanum Pen Script", cursive', 'yozma': '"Noto Sans KR", sans-serif', 'kursiv': '"Nanum Pen Script", cursive' },
-        'Frantsuzcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Caveat", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' },
-        'O\'zbekcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Marck Script", cursive', 'kalligrafik': '"Dancing Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' },
-        'Qozoqcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Caveat", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' },
-        'Polyakcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Caveat", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' }
+        'Frantsuzcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Playpen Sans", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' },
+        'O\'zbekcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Playpen Sans", cursive', 'kalligrafik': '"Dancing Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' },
+        'Qozoqcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Playpen Sans", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' },
+        'Polyakcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Playpen Sans", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' }
     };
     function letterAt(letters, i) {
         return Array.isArray(letters) ? letters[i] : letters.charAt(i);
