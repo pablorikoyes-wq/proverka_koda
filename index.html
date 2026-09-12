@@ -1090,7 +1090,7 @@
                     </div>
                     <div class="task-right">
                         <div class="task-price">126000 so'm</div>
-                        <div class="task-price-per">3700 so'm/dona</div>
+                        <div class="task-price-per">4300 so'm/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
@@ -1108,7 +1108,7 @@
                     </div>
                     <div class="task-right">
                         <div class="task-price">139000 so'm</div>
-                        <div class="task-price-per">4100 so'm/dona</div>
+                        <div class="task-price-per">4800 so'm/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
@@ -1126,7 +1126,7 @@
                     </div>
                     <div class="task-right">
                         <div class="task-price">151000 so'm</div>
-                        <div class="task-price-per">4400 so'm/dona</div>
+                        <div class="task-price-per">5200 so'm/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
@@ -1144,7 +1144,7 @@
                     </div>
                     <div class="task-right">
                         <div class="task-price">164000 so'm</div>
-                        <div class="task-price-per">4800 so'm/dona</div>
+                        <div class="task-price-per">5700 so'm/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
@@ -1162,7 +1162,7 @@
                     </div>
                     <div class="task-right">
                         <div class="task-price">176000 so'm</div>
-                        <div class="task-price-per">5200 so'm/dona</div>
+                        <div class="task-price-per">6100 so'm/dona</div>
                     </div>
                 </div>
                 <div class="task-badge-time">
@@ -1697,7 +1697,7 @@
     document.querySelectorAll('.UI-user-name').forEach(el => el.innerText = tgUser.name);
     document.querySelectorAll('.UI-user-avatar').forEach(el => el.innerText = tgUser.avatarLetter);
     const languages = [
-        { name: 'O\'zbekcha', code: 'UZ', letters: 'ABDEFGHIJKLMNOPQRSTUVXYZO\'G\'SHCHNG' },
+        { name: 'O\'zbekcha', code: 'UZ', letters: ['A','B','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z','O\'','G\'','SH','CH','NG'] },
         { name: 'Ruscha', code: 'RU', letters: 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ' },
         { name: 'Inglizcha', code: 'EN', letters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' },
         { name: 'Frantsuzcha', code: 'FR', letters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÆÇÉÈÊËÎÏÔŒÙÛÜŸ' },
@@ -1719,6 +1719,9 @@
         'Qozoqcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Caveat", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' },
         'Polyakcha': { 'bosma': 'Inter, sans-serif', 'qo\'lyozma': '"Caveat", cursive', 'kalligrafik': '"Marck Script", cursive', 'yozma': '"Bad Script", cursive', 'kursiv': '"Neucha", cursive' }
     };
+    function letterAt(letters, i) {
+        return Array.isArray(letters) ? letters[i] : letters.charAt(i);
+    }
     let popularTasksList = [];
     let allTasksList = [];
     function generateMockTasks() {
@@ -1735,7 +1738,7 @@
             let duration = isArabic ? 5 : Math.floor(Math.random() * 2) + 3;
             let fontFamily = fontMapping[lang.name]?.[style] || 'Inter, sans-serif';
             popularTasksList.push({
-                id: 'pop_' + idCounter++, langName: lang.name, styleName: style, letters: lang.letters, price: price, pricePerLetter: pricePerLetter, duration: duration, previewChar: lang.letters.charAt(0), fontFamily: fontFamily
+                id: 'pop_' + idCounter++, langName: lang.name, styleName: style, letters: lang.letters, price: price, pricePerLetter: pricePerLetter, duration: duration, previewChar: letterAt(lang.letters, 0), fontFamily: fontFamily
             });
         }
         for (let i = 0; i < 30; i++) {
@@ -1749,7 +1752,7 @@
             let duration = Math.floor(Math.random() * 3) + 2;
             let fontFamily = fontMapping[lang.name]?.[style] || 'Inter, sans-serif';
             allTasksList.push({
-                id: 'all_' + idCounter++, langName: lang.name, styleName: style, letters: lang.letters, price: price, pricePerLetter: pricePerLetter, duration: duration, previewChar: lang.letters.charAt(0), fontFamily: fontFamily
+                id: 'all_' + idCounter++, langName: lang.name, styleName: style, letters: lang.letters, price: price, pricePerLetter: pricePerLetter, duration: duration, previewChar: letterAt(lang.letters, 0), fontFamily: fontFamily
             });
         }
     }
@@ -1948,9 +1951,9 @@
         document.getElementById('drawingControlsGroup').style.pointerEvents = 'auto';
         document.getElementById('drawingControlsGroup').style.opacity = '1';
         document.getElementById('execTimerClock').innerText = `${task.duration}:00`;
+        switchPage('pageTaskExec');
         setupLettersCarousel();
         loadCurrentLetterSetup();
-        switchPage('pageTaskExec');
         resizeCanvas();
         clearCanvas();
     }
@@ -1961,7 +1964,7 @@
         for (let i = 0; i < chars.length; i++) {
             const item = document.createElement('div');
             item.className = `carousel-item ${i===0?'active':''}`;
-            item.innerText = chars.charAt(i);
+            item.innerText = letterAt(chars, i);
             item.style.fontFamily = appState.activeTaskData.fontFamily;
             item.id = `carousel_item_${i}`;
             car.appendChild(item);
@@ -1982,6 +1985,9 @@
         if (!fitStencilToBoard._canvas) fitStencilToBoard._canvas = document.createElement('canvas');
         const ctx = fitStencilToBoard._canvas.getContext('2d');
         const baseSize = 140;
+        // Agar shrift hali to'liq yuklanmagan bo'lsa, o'lchov noto'g'ri chiqishi mumkin —
+        // bunday holda ehtiyotkorlik uchun qo'shimcha zaxira joy qoldiramiz
+        const fontConfirmedLoaded = !(window.document.fonts && document.fonts.check) || document.fonts.check(`${baseSize}px ${fontFamily}`);
         ctx.font = `${baseSize}px ${fontFamily}`;
         const metrics = ctx.measureText(char);
         const inkLeft = metrics.actualBoundingBoxLeft || 0;
@@ -1992,13 +1998,14 @@
         const inkH = inkAscent + inkDescent;
         let size = baseSize;
         if (inkW > 0 && inkH > 0) {
-            const scale = Math.min(availW / inkW, availH / inkH, 1) * 0.92;
+            const safetyFactor = fontConfirmedLoaded ? 0.92 : 0.65;
+            const scale = Math.min(availW / inkW, availH / inkH, 1) * safetyFactor;
             size = Math.max(40, Math.min(baseSize, baseSize * scale));
         }
         stencil.style.fontSize = size + 'px';
     }
     function loadCurrentLetterSetup() {
-        const currentLetter = appState.activeTaskData.letters.charAt(appState.currentLetterIdx);
+        const currentLetter = letterAt(appState.activeTaskData.letters, appState.currentLetterIdx);
         const stencilEl = document.getElementById('canvasStencil');
         stencilEl.innerText = currentLetter;
         fitStencilToBoard();
